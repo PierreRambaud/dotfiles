@@ -1,3 +1,6 @@
+UnBundle "neocomplcache"
+UnBundle "AutoClose"
+
 " moving around windows
 map <C-W>h <C-W>h:call ResizeWindow()<CR>ze
 map <C-W>j <C-W>j<C-W>_

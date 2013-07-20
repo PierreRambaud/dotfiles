@@ -1,0 +1,17 @@
+" moving around windows
+map <C-W>h <C-W>h:call ResizeWindow()<CR>ze
+map <C-W>j <C-W>j<C-W>_
+map <C-W>k <C-W>k<C-W>_
+map <C-W>l <C-W>l:call ResizeWindow()<CR>ze
+
+fun! ResizeWindow()
+    if empty(&bt)
+        :vertical res
+    elseif &bt == "nofile" && winwidth(0) < 31
+        " NERDTree & co. splits
+        :vertical res 31
+    endif
+endfunction
+
+map <Leader>t <Esc>:w<CR>:!phpunit<CR>
+

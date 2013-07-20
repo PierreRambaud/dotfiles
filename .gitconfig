@@ -1,0 +1,7 @@
+[user]
+	name = Pierre RAMBAUD
+	email = pierre.rambaud@numergy.com
+[color]
+	ui = true
+[alias]
+	unadd = reset HEAD

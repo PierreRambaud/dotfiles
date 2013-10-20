@@ -5,3 +5,4 @@
 	ui = true
 [alias]
 	unadd = reset HEAD
+	stash-unapply = !git stash show -p | git apply -R

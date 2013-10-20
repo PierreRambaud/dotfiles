@@ -5,6 +5,20 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+# --- NodeJS
+export PATH=$PATH:/opt/node/bin
+export NODE_PATH=/opt/node:/opt/node/lib/node_modules
+# ---
+
+# --- Pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+
+if type "pyenv" &> /dev/null
+then
+    eval "$(pyenv init -)"
+fi
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth

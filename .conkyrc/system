@@ -18,7 +18,6 @@ draw_shades no
 draw_outline no
 draw_borders no
 border_width 1
-border_margin 1
 
 background yes
 
@@ -49,7 +48,7 @@ color5 777777
 color6 EEEEEE
 color7 DDDDDD
 color8 CCCCCC
-color9 D60650
+color9 D00204
 
 ${color1}${font Jack Skellingtonbats:pixelsize=72}${alignc} j ${font}
 

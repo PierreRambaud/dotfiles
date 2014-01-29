@@ -10,3 +10,5 @@
     stash-unapply = !git stash show -p | git apply -R
 [gitreview]
     username = GoT
+[core]
+	editor = emacs

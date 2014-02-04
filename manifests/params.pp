@@ -9,7 +9,7 @@ class dotfiles::params {
       $packages = ['rake', 'terminator', 'fluxbox', 'xscreensaver', 'conky']
       $cask_command = 'curl -fsSkL https://raw.github.com/cask/cask/master/go | python'
       $pyenv_command = 'cd && git clone git://github.com/yyuu/pyenv.git .pyenv'
-      $user          = 'got'
+      $user = 'got'
     }
     default: {
       fail("${::operatingsystem} not supported")

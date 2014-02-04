@@ -1,10 +1,10 @@
 ---
 default_set: 'ubuntu-server-12042-x64'
 sets:
-  'ubuntu-server-10044-x64':
+  'debian-70rc1-x64-vf503':
     nodes:
       "main.foo.vm":
-        prefab: 'ubuntu-server-10044-x64'
+        prefab: 'debian-70rc1-x64-vf503'
   'ubuntu-server-12042-x64':
     nodes:
       "main.foo.vm":

@@ -6,10 +6,11 @@
 class dotfiles::params {
   case $::osfamily {
     'Debian': {
-      $packages = ['rake', 'terminator', 'fluxbox', 'xscreensaver', 'conky']
-      $cask_command = 'curl -fsSkL https://raw.github.com/cask/cask/master/go | python'
-      $pyenv_command = 'cd && git clone git://github.com/yyuu/pyenv.git .pyenv'
+      $packages = ['rake', 'terminator', 'fluxbox', 'xscreensaver', 'conky', 'git']
+      $cask_command = 'git clone https://github.com/cask/cask.git'
+      $pyenv_command = 'git clone git://github.com/yyuu/pyenv.git .pyenv'
       $user = 'got'
+      $password = 'test'
     }
     default: {
       fail("${::operatingsystem} not supported")

@@ -10,6 +10,5 @@ class dotfiles::config::conky {
     owner   => $dotfiles::params::user_name,
     group   => $dotfiles::params::user_name,
     recurse => true,
-    require => Package['conky']
   }
 }

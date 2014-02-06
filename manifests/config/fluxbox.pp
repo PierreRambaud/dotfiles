@@ -12,7 +12,6 @@ class dotfiles::config::fluxbox {
     owner   => $dotfiles::params::user_name,
     group   => $dotfiles::params::user_name,
     recurse => true,
-    require => Package['fluxbox']
   }
 
   file {'fluxbox/init':

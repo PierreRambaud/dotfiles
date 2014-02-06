@@ -1,20 +1,20 @@
-# == Class dotfiles::install::bash
+# == Class dotfiles::config::git
 #
-class dotfiles::install::bash {
+class dotfiles::config::git {
   include dotfiles::params
 
-  file {'bash_aliases':
+  file {'gitconfig':
     ensure  => present,
-    path    => "${dotfiles::params::user_home_dir}.bash_aliases",
+    path    => "${dotfiles::params::user_home_dir}.gitconfig",
     source  => 'puppet:///modules/dotfiles/bash_aliases',
     owner   => $dotfiles::params::user_name,
     group   => $dotfiles::params::user_name,
   } ->
 
-  file {'bashrc':
+  file {'gitignore':
     ensure  => present,
-    path    => "${dotfiles::params::user_home_dir}.bashrc",
-    source  => 'puppet:///modules/dotfiles/bashrc',
+    path    => "${dotfiles::params::user_home_dir}.gitignore",
+    source  => 'puppet:///modules/dotfiles/bash_aliases',
     owner   => $dotfiles::params::user_name,
     group   => $dotfiles::params::user_name,
   }

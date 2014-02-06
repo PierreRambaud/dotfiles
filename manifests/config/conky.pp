@@ -1,6 +1,6 @@
-# == Class dotfiles::install::conky
+# == Class dotfiles::config::conky
 #
-class dotfiles::install::conky {
+class dotfiles::config::conky {
   include dotfiles::params
 
   file {'.conkyrc':

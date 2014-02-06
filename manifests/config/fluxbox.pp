@@ -1,6 +1,6 @@
-# == Class dotfiles::install
+# == Class dotfiles::config::fluxbox
 #
-class dotfiles::install::fluxbox {
+class dotfiles::config::fluxbox {
   include dotfiles::params
 
   $home_directory = $dotfiles::params::user_home_dir

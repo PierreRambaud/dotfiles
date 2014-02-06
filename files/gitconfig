@@ -1,0 +1,14 @@
+[user]
+    name = Pierre RAMBAUD
+    email = pierre.rambaud@numergy.com
+[core]
+    excludesfiles = ~/.gitignore
+[color]
+    ui = true
+[alias]
+    unadd = reset HEAD
+    stash-unapply = !git stash show -p | git apply -R
+[gitreview]
+    username = GoT
+[core]
+    editor = emacs

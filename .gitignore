@@ -1,3 +1,6 @@
+.*.sw?
+pkg
+spec/fixtures
+.rspec_system
 .project
-.python-version
-.fluxbox/fbrun_history
+Gemfile.lock

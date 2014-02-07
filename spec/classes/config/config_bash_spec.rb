@@ -15,10 +15,14 @@ describe 'dotfiles::config::bash' do
 
         it { should contain_file('bash_aliases')
             .with_ensure('present')
+            .with_owner('got')
+            .with_group('got')
         }
 
         it { should contain_file('bashrc')
             .with_ensure('present')
+            .with_owner('got')
+            .with_group('got')
         }
       end
     end

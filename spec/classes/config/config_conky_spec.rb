@@ -15,6 +15,8 @@ describe 'dotfiles::config::conky' do
 
         it { should contain_file('.conkyrc')
             .with_ensure('directory')
+            .with_owner('got')
+            .with_group('got')
             .with_recurse('true')
         }
       end

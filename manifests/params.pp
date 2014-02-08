@@ -12,7 +12,6 @@ class dotfiles::params {
       $pyenv_command = 'git clone git://github.com/yyuu/pyenv.git .pyenv'
 
       $user_name = 'got'
-      $user_password = 'test'
       $user_home_dir = "/home/${user_name}/"
     }
     default: {

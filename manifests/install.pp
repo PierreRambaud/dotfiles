@@ -7,6 +7,5 @@ class dotfiles::install {
   user {$dotfiles::params::user_name:
     ensure     => present,
     managehome => true,
-    password   => $dotfiles::params::user_password,
   }
 }

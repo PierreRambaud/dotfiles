@@ -7,4 +7,5 @@ class dotfiles::config {
   include dotfiles::config::conky
   include dotfiles::config::git
   include dotfiles::config::bash
+  include dotfiles::config::terminator
 }

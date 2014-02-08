@@ -41,7 +41,7 @@ default_outline_color 222222
 
 color1 555555
 color2 ffffff
-color9 D00204
+color9 <% scope.lookupvar('dotfiles::params::theme_color') %>
 
 ${color1}${font Jack Skellingtonbats:pixelsize=72}${alignc} j ${font}
 
@@ -55,4 +55,3 @@ ${color9}${font courier:size=10:weight=bold}File systems ${color9}${hr}${font}${
 ${offset 15}${color1}/ ${offset 24}${fs_used /}/${fs_size /} ${fs_bar 6 /}
 ${offset 15}${color1}/home ${fs_used /home}/${fs_size /home} ${fs_bar 6 /home}
 ${offset 15}${color1}/tmp ${offset 5}${fs_used /tmp}/${fs_size /tmp} ${fs_bar 6 /tmp}
-

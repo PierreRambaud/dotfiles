@@ -48,7 +48,7 @@ color5 777777
 color6 EEEEEE
 color7 DDDDDD
 color8 CCCCCC
-color9 D00204
+color9 <% scope.lookupvar('dotfiles::params::theme_color') %>
 
 ${color1}${font Jack Skellingtonbats:pixelsize=72}${alignc} j ${font}
 

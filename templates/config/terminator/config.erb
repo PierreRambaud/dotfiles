@@ -1,6 +1,6 @@
 [global_config]
   enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
-  title_transmit_bg_color = "<% scope.lookupvar('dotfiles::params::theme_color') %>"
+  title_transmit_bg_color = "#<%= scope.lookupvar('dotfiles::params::theme_color') %>"
 [keybindings]
   reset = None
   next_tab = <Ctrl>Page_Down

@@ -32,7 +32,7 @@ override_utf8_locale yes # force UTF8
 xftfont courier:size=8:weight=bold#OCR A Std:size=6
 uppercase no
 
-use_spacer yes
+use_spacer true
 
 # Couleurs
 default_color FFFFFF

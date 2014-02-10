@@ -17,8 +17,8 @@ class dotfiles::params {
       $theme = 'GotBlueDark'
 
       $theme_color = $dotfiles::params::theme ? {
-        'GotRedDark'  => '#D00402',
-        'GotBlueDark' => '#5385fe',
+        'GotRedDark'  => 'D00402',
+        'GotBlueDark' => '5385fe',
       }
 
     }

@@ -41,7 +41,7 @@ default_outline_color 222222
 
 color1 555555
 color2 ffffff
-color9 <% scope.lookupvar('dotfiles::params::theme_color') %>
+color9 <%= scope.lookupvar('dotfiles::params::theme_color') %>
 
 ${color1}${font Jack Skellingtonbats:pixelsize=72}${alignc} j ${font}
 

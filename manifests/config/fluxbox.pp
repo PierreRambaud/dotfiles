@@ -22,15 +22,8 @@ class dotfiles::config::fluxbox {
     group   => $dotfiles::params::user_name,
   } ->
 
-  file {'fluxbox/lastwallpaper':
-    ensure  => present,
-    path    => "${dotfiles::params::user_home_dir}.fluxbox/lastwallpaper",
-    content => template('dotfiles/fluxbox/lastwallpaper.erb'),
-    owner   => $dotfiles::params::user_name,
-    group   => $dotfiles::params::user_name,
-  } ->
-
-  exec {'restart-fluxbox':
-    command => 'fluxbox-remote "Restart"'
+  exec {'fluxbox/restart':
+    command => 'fluxbox-remote "Restart"',
+    path    => ['/usr/bin']
   }
 }

@@ -11,7 +11,7 @@ class dotfiles::params {
       $cask_command = 'git clone https://github.com/cask/cask.git'
       $pyenv_command = 'git clone git://github.com/yyuu/pyenv.git .pyenv'
 
-      $user_name = 'prambaud'
+      $user_name = 'got'
       $user_home_dir = "/home/${user_name}/"
 
       $theme = 'GotWhiteBlack'

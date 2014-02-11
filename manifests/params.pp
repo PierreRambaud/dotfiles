@@ -11,14 +11,14 @@ class dotfiles::params {
       $cask_command = 'git clone https://github.com/cask/cask.git'
       $pyenv_command = 'git clone git://github.com/yyuu/pyenv.git .pyenv'
 
-      $user_name = 'got'
+      $user_name = 'prambaud'
       $user_home_dir = "/home/${user_name}/"
 
       $theme = 'GotBlueBlack'
 
       $theme_color = $dotfiles::params::theme ? {
         'GotRedBlack'  => 'D00402',
-        'GotBlueBlack' => '5385fe',
+        'GotBlueBlack' => '1b5b74',
       }
 
     }

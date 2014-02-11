@@ -19,6 +19,11 @@ then
     eval "$(pyenv init -)"
 fi
 
+if type "register-python-argcomplete" &> /dev/null
+then
+    eval "$(register-python-argcomplete yoda)"
+fi
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth

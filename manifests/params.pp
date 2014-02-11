@@ -14,13 +14,19 @@ class dotfiles::params {
       $user_name = 'prambaud'
       $user_home_dir = "/home/${user_name}/"
 
-      $theme = 'GotBlueBlack'
+      $theme = 'GotWhiteBlack'
 
       $theme_color = $dotfiles::params::theme ? {
         'GotRedBlack'  => 'D00402',
         'GotBlueBlack' => '1b5b74',
+        'GotWhiteBlack' => 'ffffff'
       }
 
+      $theme_fg_color = $dotfiles::params::theme ? {
+        'GotRedBlack'  => 'ffffff',
+        'GotBlueBlack' => 'ffffff',
+        'GotWhiteBlack' => '000000'
+      }
     }
     default: {
       fail("${::operatingsystem} not supported")

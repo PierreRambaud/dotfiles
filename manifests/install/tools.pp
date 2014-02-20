@@ -14,6 +14,20 @@ class dotfiles::install::tools {
 
   file {"${dotfiles::params::user_home_dir}.cask":
     ensure => directory,
+    group  => $dotfiles::params::user_name,
+    owner  => $dotfiles::params::user_name,
+  }
+
+  exec {'rbenv':
+    command => $dotfiles::params::rbenv_command,
+    creates => "${dotfiles::params::user_home_dir}.rbenv",
+    cwd     => $dotfiles::params::user_home_dir,
+    require => User[$dotfiles::params::user_name],
+  } ->
+
+  file {"${dotfiles::params::user_home_dir}.rbenv":
+    ensure => directory,
+    group  => $dotfiles::params::user_name,
     owner  => $dotfiles::params::user_name,
   }
 
@@ -26,6 +40,7 @@ class dotfiles::install::tools {
 
   file {"${dotfiles::params::user_home_dir}.pyenv":
     ensure => directory,
+    group  => $dotfiles::params::user_name,
     owner  => $dotfiles::params::user_name,
   }
 }

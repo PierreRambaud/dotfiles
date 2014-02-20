@@ -19,9 +19,17 @@ then
     eval "$(pyenv init -)"
 fi
 
+# -- Argcomplete
 if type "register-python-argcomplete" &> /dev/null
 then
     eval "$(register-python-argcomplete yoda)"
+fi
+
+# -- Rbenv
+export RBENV_ROOT="${HOME}/.rbenv"
+if [ -d "${RBENV_ROOT}" ]; then
+  export PATH="${RBENV_ROOT}/bin:${PATH}"
+  eval "$(rbenv init -)"
 fi
 
 # don't put duplicate lines or lines starting with space in the history.

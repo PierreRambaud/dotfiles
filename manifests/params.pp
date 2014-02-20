@@ -10,6 +10,7 @@ class dotfiles::params {
 
       $cask_command = 'git clone https://github.com/cask/cask.git'
       $pyenv_command = 'git clone git://github.com/yyuu/pyenv.git .pyenv'
+      $rbenv_command = 'curl https://raw.github.com/fesplugas/rbenv-installer/master/bin/rbenv-installer | bash'
 
       $user_name = 'got'
       $user_home_dir = "/home/${user_name}/"

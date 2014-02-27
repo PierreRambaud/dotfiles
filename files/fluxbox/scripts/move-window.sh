@@ -32,7 +32,7 @@ pidof fluxbox &> /dev/null && {
         left)
             if [[ $CURRENT_X -ge $HALF_WINDOW ]]; then
                 maximize $IS_MAXIMIZE
-                VALUE=$(echo $HALF_WINDOW-$CURRENT_WIDTH | bc)
+                VALUE=$(echo "$WINDOW_X-$CURRENT_X" | bc)
                 if [[ $VALUE == 0 ]]; then
                     VALUE=$HALF_WINDOW
                 fi
@@ -44,7 +44,7 @@ pidof fluxbox &> /dev/null && {
         right)
             if [[ $CURRENT_X -le $HALF_WINDOW ]]; then
                 maximize $IS_MAXIMIZE
-                VALUE=$(echo $HALF_WINDOW+$CURRENT_WIDTH | bc)
+                VALUE=$(echo $HALF_WINDOW+$CURRENT_X | bc)
                 fluxbox-remote "MoveTo $VALUE * Left"
                 maximize $IS_MAXIMIZE
             fi

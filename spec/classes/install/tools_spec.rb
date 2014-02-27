@@ -9,10 +9,11 @@ describe 'dotfiles::install::tools' do
           :osfamily => osfamily,
         }}
 
+        it { should compile.with_all_deps }
+
         it { should contain_exec('cask')
             .with_command('git clone https://github.com/cask/cask.git')
             .with_creates('/home/got/.cask')
-            .with_require('User[got]')
         }
 
         it { should contain_file('/home/got/.cask')
@@ -24,7 +25,6 @@ describe 'dotfiles::install::tools' do
         it { should contain_exec('pyenv')
             .with_command('git clone git://github.com/yyuu/pyenv.git .pyenv')
             .with_creates('/home/got/.pyenv')
-            .with_require('User[got]')
         }
 
         it { should contain_file('/home/got/.pyenv')
@@ -36,7 +36,6 @@ describe 'dotfiles::install::tools' do
         it { should contain_exec('rbenv')
             .with_command('curl https://raw.github.com/fesplugas/rbenv-installer/master/bin/rbenv-installer | bash')
             .with_creates('/home/got/.rbenv')
-            .with_require('User[got]')
         }
 
         it { should contain_file('/home/got/.rbenv')

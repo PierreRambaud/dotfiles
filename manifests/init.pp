@@ -12,10 +12,6 @@ class dotfiles (
 
   # validate parameters here
 
-  Exec {
-    path => ['/usr/bin', '/usr/sbin', '/bin', '/sbin'],
-  }
-
   class { 'dotfiles::install': } ->
   class { 'dotfiles::config': } ~>
   class { 'dotfiles::service': } ->

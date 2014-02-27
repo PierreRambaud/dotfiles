@@ -6,7 +6,7 @@
 class dotfiles::params {
   case $::osfamily {
     'Debian': {
-      $packages = ['rake', 'terminator', 'fluxbox', 'xscreensaver', 'conky', 'git']
+      $packages = ['rake', 'terminator', 'fluxbox', 'xscreensaver', 'conky', 'git', 'xdotool']
 
       $cask_command = 'git clone https://github.com/cask/cask.git'
       $pyenv_command = 'git clone git://github.com/yyuu/pyenv.git .pyenv'

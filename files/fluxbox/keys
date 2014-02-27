@@ -76,6 +76,8 @@ Mod1 F3 :Exec xterm
 # current window commands
 Mod1 F4 :Close
 Mod1 F5 :Kill
+Mod1 F7 :ExecCommand ~/.fluxbox/scripts/move-window.sh Left
+Mod1 F8 :ExecCommand ~/.fluxbox/scripts/move-window.sh Right
 Mod1 F9 :Minimize
 Mod1 F10 :Maximize
 Mod1 F11 :Fullscreen

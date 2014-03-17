@@ -9,8 +9,6 @@ describe 'dotfiles' do
           :osfamily => osfamily,
         }}
 
-        it { should compile.with_all_deps }
-
         it { should contain_class('dotfiles::params') }
 
         it { should contain_class('dotfiles::install').that_comes_before('dotfiles::config') }
@@ -27,7 +25,7 @@ describe 'dotfiles' do
         :operatingsystem => 'Nexenta',
       }}
 
-      it { expect { should }.to raise_error(Puppet::Error, /Nexenta not supported/) }
+      it { expect { should contain_package('dotfiles') }.to raise_error(Puppet::Error, /Nexenta not supported/) }
     end
   end
 end

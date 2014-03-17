@@ -6,11 +6,26 @@
 class dotfiles::params {
   case $::osfamily {
     'Debian': {
-      $packages = ['rake', 'terminator', 'fluxbox', 'xscreensaver', 'conky', 'git', 'xdotool']
+      $packages = [
+          'rake',
+          'terminator',
+          'fluxbox',
+          'xscreensaver',
+          'conky',
+          'git',
+          'xdotool',
+          'build-essential',
+          'libssl-dev',
+          'zlib1g-dev',
+          'libbz2-dev',
+          'libreadline-dev',
+          'libsqlite3-dev',
+          'wget',
+          'curl',
+          'llvm'
+      ]
 
       $cask_command = 'git clone https://github.com/cask/cask.git'
-      $pyenv_command = 'git clone git://github.com/yyuu/pyenv.git .pyenv'
-      $rbenv_command = 'curl https://raw.github.com/fesplugas/rbenv-installer/master/bin/rbenv-installer | bash'
 
       $user_name = 'got'
       $user_home_dir = "/home/${user_name}/"

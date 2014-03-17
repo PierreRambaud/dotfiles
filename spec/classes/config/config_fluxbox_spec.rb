@@ -3,7 +3,7 @@ require 'spec_helper'
 describe 'dotfiles::config::fluxbox' do
   context 'supported operating systems' do
     ['Debian'].each do |osfamily|
-      describe "dotfiles class without any parameters on #{osfamily}" do
+      describe "dotfiles::config::fluxbox class without any parameters on #{osfamily}" do
         let(:params) {{ }}
         let(:facts) {{
           :osfamily => osfamily,

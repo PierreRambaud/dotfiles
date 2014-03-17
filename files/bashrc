@@ -8,29 +8,12 @@
 # --- NodeJS
 export PATH=$PATH:/opt/node/bin
 export NODE_PATH=/opt/node:/opt/node/lib/node_modules
-# ---
-
-# --- Pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-
-if type "pyenv" &> /dev/null
-then
-    eval "$(pyenv init -)"
-fi
 
 # -- Argcomplete
-if type "register-python-argcomplete" &> /dev/null
-then
+if type "register-python-argcomplete" &> /dev/null; then
     eval "$(register-python-argcomplete yoda)"
 fi
 
-# -- Rbenv
-export RBENV_ROOT="${HOME}/.rbenv"
-if [ -d "${RBENV_ROOT}" ]; then
-  export PATH="${RBENV_ROOT}/bin:${PATH}"
-  eval "$(rbenv init -)"
-fi
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -59,22 +42,6 @@ fi
 case "$TERM" in
     xterm-color) color_prompt=yes;;
 esac
-
-# uncomment for a colored prompt, if the terminal has the capability; turned
-# off by default to not distract the user: the focus in a terminal window
-# should be on the output of commands, not on the prompt
-#force_color_prompt=yes
-
-if [ -n "$force_color_prompt" ]; then
-    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-    # We have color support; assume it's compliant with Ecma-48
-    # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-    # a case would tend to support setf rather than setaf.)
-    color_prompt=yes
-    else
-    color_prompt=
-    fi
-fi
 
 if [ "$color_prompt" = yes ]; then
     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
@@ -109,4 +76,7 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-xset -b
+# -- Xset
+if type "xset" &> /dev/null; then
+   xset -b
+fi

@@ -1,7 +1,0 @@
-fixtures:
-  repositories:
-    stdlib: "https://github.com/puppetlabs/puppetlabs-stdlib.git"
-    pyenv: "https://github.com/Sliim/puppet-pyenv.git"
-    rbenv: "https://github.com/alup/puppet-rbenv.git"
-  symlinks:
-    dotfiles: "#{source_dir}"

@@ -1,20 +1,14 @@
-source "http://rubygems.org"
+source 'https://rubygems.org'
 
-group :test do
-  gem "rake"
-  gem "puppet", ENV['PUPPET_VERSION'] || '~> 3.4.0'
-  gem "puppet-lint"
-  gem "rspec-puppet", :git => 'https://github.com/rodjek/rspec-puppet.git'
-  gem "puppet-syntax"
-  gem "puppetlabs_spec_helper"
-end
+gem 'chef', '~> 11.12.2'
+gem 'berkshelf', '~> 2.0.16'
 
-group :development do
-  gem "travis"
-  gem "travis-lint"
-  gem "beaker"
-  gem "beaker-rspec"
-  gem "vagrant-wrapper"
-  gem "puppet-blacksmith"
-  gem "guard-rake"
+group :integration do
+  gem 'rubocop'
+  gem 'strainer', '~> 3.4.0'
+  gem 'test-kitchen', '~> 1.2.1'
+  gem 'kitchen-vagrant'
+  gem 'serverspec'
+  gem 'chefspec'
+  gem 'foodcritic'
 end

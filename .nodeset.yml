@@ -1,7 +1,0 @@
----
-default_set: 'ubuntu-server-12042-x64'
-sets:
-  'debian-70rc1-x64-vf503':
-    nodes:
-      "dotfiles.vm":
-        prefab: 'debian-70rc1-x64-vf503'

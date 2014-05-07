@@ -1,53 +1,72 @@
-#Got's dotfiles
+Got's dotfiles Cookbook
+================
+My dotfiles with Opscode Chef.
 
-[![Build Status](https://travis-ci.org/PierreRambaud/dotfiles.png?branch=master)](https://travis-ci.org/PierreRambaud/dotfiles)
+Requirements
+------------
+Ruby 1.9.3 or higher
 
-My dotfiles with puppet.
+#### packages
+- `ruby` - A version of ruby >= 1.9.3
 
-##Dependencies
-- Puppet 3.4.0 or greater
+Attributes
+----------
 
-##Usage
+#### dotfiles::default
+<table>
+  <tr>
+    <th>Key</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Default</th>
+  </tr>
+  <tr>
+    <td><tt>['dotfiles']['user']</tt></td>
+    <td>String</td>
+    <td>User name</td>
+    <td><tt>got</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['dotfiles']['user_home']</tt></td>
+    <td>String</td>
+    <td>User home</td>
+    <td><tt>/home/#{node['dotfiles']['user']}</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['dotfiles']['theme']</tt></td>
+    <td>String</td>
+    <td>Theme of fluxbox used</td>
+    <td><tt>GotWhiteBlack</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['dotfiles']['packages']</tt></td>
+    <td>Array</td>
+    <td>List of packages chef must installed</td>
+    <td><tt>rake terminator fluxbox xscreensaver conky xdotool libbz2-dev libsqlite3-dev wget llvm</tt></td>
+  </tr>
+</table>
 
-Install puppet's module dependencies as root:
+Usage
+-----
+#### dotfiles::default
+Just include `dotfiles` in your node's `run_list`:
 
-```bash
-mkdir -p /etc/puppet/modules
-cd /etc/puppet/modules
-git clone https://github.com/PierreRambaud/dotfiles.git
-cd dotfiles
-gem install librarian-puppet
-librarian-puppet install --path ../
+```json
+{
+  "name":"my_node",
+  "run_list": [
+    "recipe[dotfiles]"
+  ]
+}
 ```
 
-Install dotfiles:
+Run tests
+---------
+`bundle install` to install dependencies
+`bundle exec berks install` to install cookbooks dependencies
+`bundle exec strainer test` to execute chefspec, foodcritic, knife test, rubocop and kitchen
+`bundle exec strainer test -e kitchen` to exclude kitchen tests
 
-```bash
-sudo puppet apply --modulepath=/etc/puppet/modules/ -e "include dotfiles" --verbose
-```
-
-You must run this command with sudo or root otherwise some dependencies will not be installed.
-
-##Change theme and user
-
-To change the user name, edit the variable `$theme` in `manifests/params.pp`.
-To change the current theme, edit the variable `$user_name` in `manifests/params.pp`.
-
-
-##Run tests
-
-Run syntax, lint, and spec tests:
-
-```bash
-bundle exec rake test
-```
-
-Run acceptance tests:
-
-```bash
-bundle exec rake acceptance
-```
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/PierreRambaud/dotfiles/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
+License and Authors
+-------------------
+Authors: Pierre Rambaud (pierre.rambaud86@gmail.com)

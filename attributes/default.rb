@@ -1,23 +1,19 @@
+# encoding: UTF-8
+# coding: UTF-8
+# -*- coding: UTF-8 -*-
+
 default['dotfiles']['user'] = 'got'
-default['dotfiles']['home_dir'] = "/home/#{default['dotfiles']['user]}"
-
+default['dotfiles']['user_home'] = "/home/#{node['dotfiles']['user']}"
 default['dotfiles']['theme'] = 'GotWhiteBlack'
-
-default['dotfiles']['packages'] = [
-  'rake',
-  'terminator',
-  'fluxbox',
-  'xscreensaver',
-  'conky',
-  'git',
-  'xdotool',
-  'build-essential',
-  'libssl-dev',
-  'zlib1g-dev',
-  'libbz2-dev',
-  'libreadline-dev',
-  'libsqlite3-dev',
-  'wget',
-  'curl',
-  'llvm'
-]
+default['dotfiles']['packages'] = %w(
+  rake
+  terminator
+  fluxbox
+  xscreensaver
+  conky
+  xdotool
+  libbz2-dev
+  libsqlite3-dev
+  wget
+  llvm
+)

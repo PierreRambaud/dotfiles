@@ -1,7 +1,11 @@
-['bash_aliases', 'bashrc', 'config/terminator/config'].each do |item|
-  template item do
-    source "#{item}.erb"
-    path "#{node['dotfiles']['home_dir']}/.#{item}"
+# encoding: UTF-8
+# coding: UTF-8
+# -*- coding: UTF-8 -*-
+
+%w(bash_aliases bashrc).each do |item|
+  cookbook_file item do
+    source item
+    path "#{node['dotfiles']['user_home']}/.#{item}"
     owner node['dotfiles']['user']
     group node['dotfiles']['user']
     action :create
@@ -9,43 +13,38 @@
 end
 
 directory 'terminator' do
-  path "#{node['dotfiles']['home_dir']}/.config/terminator"
+  path "#{node['dotfiles']['user_home']}/.config/terminator"
   owner node['dotfiles']['user']
   group node['dotfiles']['user']
   recursive true
   action :create
 end
 
-['gitconfig', 'gitignore', 'conkyrc', 'fluxbox'].each do |item|
+%w(conkyrc fluxbox).each do |item|
+  remote_directory item do
+    path "#{node['dotfiles']['user_home']}/.#{item}"
+    source item
+    owner node['dotfiles']['user']
+    group node['dotfiles']['user']
+  end
+end
+
+%w(gitconfig gitignore).each do |item|
   cookbook_file item do
     source item
-    path "#{node['dotfiles']['home_dir']}/.#{item}"
+    path "#{node['dotfiles']['user_home']}/.#{item}"
     owner node['dotfiles']['user']
     group node['dotfiles']['user']
     action :create
   end
 end
 
-['computer', 'general', 'network', 'system'].each do |item|
-  template "conkyrc/#{item}" do
-    source "conkyrc/#{item}.erb"
-    path "#{node['dotfiles']['home_dir']}/.conkyrc/.#{item}"
+%w(conkyrc/computer conkyrc/general conkyrc/network conkyrc/system config/terminator/config fluxbox/init).each do |item|
+  template item do
+    source "#{item}.erb"
+    path "#{node['dotfiles']['user_home']}/.#{item}"
     owner node['dotfiles']['user']
     group node['dotfiles']['user']
     action :create
   end
-end
-
-template 'fluxbox/init' do
-  source 'fluxbox/init.erb'
-  path "#{node['dotfiles']['home_dir']}/.fluxbox/init"
-  owner node['dotfiles']['user']
-  group node['dotfiles']['user']
-  action :create
-end
-
-execute 'restart-fluxbox' do
-  command 'fluxbox-remote "Restart"',
-  path ['/usr/bin']
-  action :run
 end

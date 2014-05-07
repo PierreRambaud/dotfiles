@@ -1,4 +1,5 @@
 metadata
 
 cookbook 'apt'
-cookbook 'build-essential', '~>2.0.2'
+cookbook 'rbenv'
+cookbook 'pyenv', git: 'https://github.com/sds/chef-pyenv.git'

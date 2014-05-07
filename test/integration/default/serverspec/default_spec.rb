@@ -16,7 +16,7 @@ end
   end
 end
 
-%w(rbenv conky fluxbox).each do |item|
+%w(rbenv conky fluxbox pyenv).each do |item|
   describe command("type #{item}") do
     it { should return_code 0 }
   end

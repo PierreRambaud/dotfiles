@@ -1,4 +1,4 @@
-Got's dotfiles Cookbook
+Got's dotfiles Cookbook [![Build Status](https://travis-ci.org/PierreRambaud/dotfiles.svg?branch=master)](https://travis-ci.org/PierreRambaud/dotfiles)
 ================
 My dotfiles with Opscode Chef.
 

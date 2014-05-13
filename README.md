@@ -60,6 +60,33 @@ Just include `dotfiles` in your node's `run_list`:
 }
 ```
 
+####With Chef-solo
+```bash
+git clone https://github.com/PierreRambaud/dotfiles.git
+bundle install
+sudo mkdir -p /var/chef/cookbooks
+bundle exec berks install --path /var/chef/cookbooks
+
+$ cat /var/chef/solo.rb
+node_name "my-computer"
+cookbook_path ['/var/chef/cookbooks']
+
+$ cat dna.json
+{
+    "run_list": [
+        "recipe[dotfiles]"
+    ],
+    "dotfiles": {
+        "user": "prambaud",
+        "user_home": "/home/prambaud",
+        "theme": "GotBlueBlack"
+    }
+}
+
+chef-solo -c /var/chef/solo.rb -j /var/chef/dna.json
+```
+
+
 Run tests
 ---------
 `bundle install` to install dependencies

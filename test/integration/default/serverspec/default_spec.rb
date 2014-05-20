@@ -11,7 +11,7 @@ require 'spec_helper'
 end
 
 %w(config/terminator conkyrc).each do |path|
-  describe direcotry('/home/got/.' + path) do
+  describe file('/home/got/.' + path) do
     it { should be_directory }
   end
 end

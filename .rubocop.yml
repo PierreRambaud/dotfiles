@@ -6,6 +6,7 @@ AllCops:
     - libraries/**/*
     - recipes/**/*
     - spec/**/*
+    - test/**/*
   Exclude:
     - cookbooks/**/*
     - vendor/**/*

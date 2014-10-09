@@ -17,4 +17,22 @@ describe 'dotfiles::install' do
       expect(chef_run).to install_package(item)
     end
   end
+
+  it 'should create user' do
+    expect(chef_run).to create_user('got')
+      .with(supports: { manage_home: true },
+            home: '/home/got',
+            shell: '/bin/bash')
+  end
+
+  it 'copy emacs configuration' do
+    expect(chef_run).to sync_git('install-sliim-emacs')
+      .with(destination: '/home/got/.emacs.d',
+            repository: 'https://github.com/Sliim/emacs.d.git',
+            user: 'got')
+    expect(chef_run).to sync_git('install-sliim-cask')
+      .with(destination: '/home/got/.emacs.d/.cask',
+            repository: 'https://github.com/Sliim/emacs.d-cask.git',
+            user: 'got')
+  end
 end

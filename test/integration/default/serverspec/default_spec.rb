@@ -10,14 +10,15 @@ require 'spec_helper'
   end
 end
 
-%w(config/terminator conkyrc).each do |path|
-  describe file('/home/got/.' + path) do
+%w(config/terminator conkyrc emacs.d emacs.d/.cask).each do |path|
+  describe file("/home/got/.#{path}") do
     it { should be_directory }
+    it { should be_owned_by 'got' }
   end
 end
 
-%w(rbenv conky fluxbox pyenv).each do |item|
+%w(emacs rbenv conky fluxbox pyenv).each do |item|
   describe command("type #{item}") do
-    it { should return_code 0 }
+    its(:exit_status) { should eq 0 }
   end
 end

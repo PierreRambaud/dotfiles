@@ -3,4 +3,7 @@ rvm:
   - 2.0.0
 before_script:
   - bundle exec berks install
-script: bundle exec strainer test --except kitchen
+script:
+  - bundle exec rubocop
+  - bundle exec foodcritic ./
+  - bundle exec rspec ./spec

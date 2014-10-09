@@ -2,6 +2,9 @@
 # coding: UTF-8
 # -*- coding: UTF-8 -*-
 
+default['apt']['compile_time_update'] = true
+default['emacs24']['version'] = '24.3'
+
 default['dotfiles']['user'] = 'got'
 default['dotfiles']['user_home'] = "/home/#{node['dotfiles']['user']}"
 default['dotfiles']['theme'] = 'GotWhiteBlack'

@@ -89,9 +89,13 @@ chef-solo -c /var/chef/solo.rb -j /var/chef/dna.json
 
 Run tests
 ---------
+
 `bundle install` to install dependencies
+
 `bundle exec berks install` to install cookbooks dependencies
+
 `bundle exec strainer test` to execute chefspec, foodcritic, knife test, rubocop and kitchen
+
 `bundle exec strainer test -e kitchen` to exclude kitchen tests
 
 License and Authors

@@ -6,9 +6,6 @@ Requirements
 ------------
 Ruby 1.9.3 or higher
 
-#### packages
-- `ruby` - A version of ruby >= 1.9.3
-
 Attributes
 ----------
 
@@ -42,7 +39,7 @@ Attributes
     <td><tt>['dotfiles']['packages']</tt></td>
     <td>Array</td>
     <td>List of packages chef must installed</td>
-    <td><tt>rake terminator fluxbox xscreensaver conky xdotool libbz2-dev libsqlite3-dev wget llvm</tt></td>
+    <td><tt>Very long list</tt></td>
   </tr>
 </table>
 
@@ -62,16 +59,15 @@ Just include `dotfiles` in your node's `run_list`:
 
 ####With Chef-solo
 ```bash
-git clone https://github.com/PierreRambaud/dotfiles.git
-bundle install
-sudo mkdir -p /var/chef/cookbooks
-bundle exec berks install --path /var/chef/cookbooks
+$ git clone https://github.com/PierreRambaud/dotfiles.git
+$ bundle install
+$ bundle exec berks vendor /var/chef/cookbooks
 
 $ cat /var/chef/solo.rb
 node_name "my-computer"
 cookbook_path ['/var/chef/cookbooks']
 
-$ cat dna.json
+$ cat /var/chef/dna.json
 {
     "run_list": [
         "recipe[dotfiles]"
@@ -83,7 +79,7 @@ $ cat dna.json
     }
 }
 
-chef-solo -c /var/chef/solo.rb -j /var/chef/dna.json
+$ chef-solo -c /var/chef/solo.rb -j /var/chef/dna.json
 ```
 
 
@@ -94,9 +90,13 @@ Run tests
 
 `bundle exec berks install` to install cookbooks dependencies
 
-`bundle exec strainer test` to execute chefspec, foodcritic, knife test, rubocop and kitchen
+`bundle exec rspec ./spec` to execute chefspec
 
-`bundle exec strainer test -e kitchen` to exclude kitchen tests
+`bundle exec rubocop` to execute rubocop
+
+`bundle exec foodcritic ./` to execute foodcritic
+
+`bundle exec kitchen test` to execute kitchen
 
 License and Authors
 -------------------

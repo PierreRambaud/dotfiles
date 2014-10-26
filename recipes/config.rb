@@ -27,6 +27,16 @@ end
     owner node['dotfiles']['user']
     group node['dotfiles']['user']
   end
+
+  execute "chown-#{item}" do
+    command "chown -hR #{node['dotfiles']['user']}:#{node['dotfiles']['user']} " \
+    "#{node['dotfiles']['user_home']}/.#{item}"
+  end
+end
+
+file "#{node['dotfiles']['user_home']}/.fluxbox/scripts/move-window.sh" do
+  owner node['dotfiles']['user']
+  group node['dotfiles']['user']
 end
 
 %w(gitconfig gitignore).each do |item|

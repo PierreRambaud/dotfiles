@@ -2,14 +2,23 @@
 # coding: UTF-8
 # -*- coding: UTF-8 -*-
 
+override['emacs24']['version'] = '24.3'
 default['apt']['compile_time_update'] = true
-default['emacs24']['version'] = '24.3'
 
 default['dotfiles']['user'] = 'got'
 default['dotfiles']['user_home'] = "/home/#{node['dotfiles']['user']}"
-default['dotfiles']['theme'] = 'GotWhiteBlack'
 default['dotfiles']['packages'] = %w(
-  rake
+  tmux
+  zsh
+  texinfo
+  libx11-dev
+  libxpm-dev
+  libjpeg-dev
+  libpng-dev
+  libgif-dev
+  libtiff-dev
+  libgtk2.0-dev
+  libncurses-dev
   terminator
   fluxbox
   xscreensaver
@@ -19,8 +28,11 @@ default['dotfiles']['packages'] = %w(
   libsqlite3-dev
   wget
   llvm
+  apache2
+  postgresql
 )
 
+default['dotfiles']['theme'] = 'GotRedBlack'
 default['dotfiles']['theme_color'] = 'D00402' if node['dotfiles']['theme'] == 'GotRedBlack'
 default['dotfiles']['theme_color'] = '1B5B74' if node['dotfiles']['theme'] == 'GotBlueBlack'
 default['dotfiles']['theme_color'] = 'FFFFFF' if node['dotfiles']['theme'] == 'GotWhiteBlack'

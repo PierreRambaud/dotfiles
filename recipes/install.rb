@@ -1,6 +1,4 @@
-# encoding: UTF-8
-# coding: UTF-8
-# -*- coding: UTF-8 -*-
+# -*- coding: utf-8 -*-
 
 node['dotfiles']['packages'].each do |item|
   package item do
@@ -17,6 +15,7 @@ end
 git 'install-sliim-emacs' do
   destination "#{node['dotfiles']['user_home']}/.emacs.d"
   repository 'https://github.com/Sliim/emacs.d.git'
+  enable_submodules true
   user node['dotfiles']['user']
   action :sync
 end

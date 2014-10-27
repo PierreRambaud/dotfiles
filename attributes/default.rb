@@ -1,6 +1,4 @@
-# encoding: UTF-8
-# coding: UTF-8
-# -*- coding: UTF-8 -*-
+# -*- coding: utf-8 -*-
 
 override['emacs24']['version'] = '24.3'
 default['apt']['compile_time_update'] = true

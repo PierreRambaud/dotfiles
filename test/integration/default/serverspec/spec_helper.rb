@@ -1,7 +1,5 @@
-# encoding: UTF-8
-# coding: UTF-8
-# -*- coding: UTF-8 -*-
-#
+# -*- coding: utf-8 -*-
+
 require 'serverspec'
 
 set :backend, :exec

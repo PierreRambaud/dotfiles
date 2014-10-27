@@ -1,11 +1,9 @@
-# encoding: UTF-8
-# coding: UTF-8
-# -*- coding: UTF-8 -*-
+# -*- coding: utf-8 -*-
 
 require_relative 'spec_helper'
 
 describe 'dotfiles::install' do
-  let(:chef_run) { ChefSpec::Runner.new(UBUNTU_OPTS).converge(described_recipe) }
+  let(:chef_run) { ChefSpec::Runner.new(DEBIAN_OPTS).converge(described_recipe) }
 
   it 'include recipes' do
     expect(chef_run).to include_recipe('dotfiles::install_rbenv')
@@ -29,6 +27,7 @@ describe 'dotfiles::install' do
     expect(chef_run).to sync_git('install-sliim-emacs')
       .with(destination: '/home/got/.emacs.d',
             repository: 'https://github.com/Sliim/emacs.d.git',
+            enable_submodules: true,
             user: 'got')
     expect(chef_run).to sync_git('install-sliim-cask')
       .with(destination: '/home/got/.emacs.d/.cask',

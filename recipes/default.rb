@@ -1,6 +1,4 @@
-# encoding: UTF-8
-# coding: UTF-8
-# -*- coding: UTF-8 -*-
+# -*- coding: utf-8 -*-
 
 include_recipe 'apt'
 resources('package[update-notifier-common]').instance_exec do

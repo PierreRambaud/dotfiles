@@ -1,6 +1,4 @@
-# encoding: UTF-8
-# coding: UTF-8
-# -*- coding: UTF-8 -*-
+# -*- coding: utf-8 -*-
 
 execute 'restart-fluxbox' do
   command 'fluxbox-remote "Restart"'

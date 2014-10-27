@@ -1,6 +1,4 @@
-# encoding: UTF-8
-# coding: UTF-8
-# -*- coding: UTF-8 -*-
+# -*- coding: utf-8 -*-
 
 node.default['rbenv']['user'] = node['dotfiles']['user']
 node.default['rbenv']['group'] = node['dotfiles']['user']

@@ -1,6 +1,4 @@
-# encoding: UTF-8
-# coding: UTF-8
-# -*- coding: UTF-8 -*-
+# -*- coding: utf-8 -*-
 
 require 'chefspec'
 require 'chefspec/berkshelf'
@@ -17,8 +15,8 @@ shared_context 'dotfiles_stubs' do
   end
 end
 
-UBUNTU_OPTS = {
-  platform: 'ubuntu',
-  version: '13.04',
+DEBIAN_OPTS = {
+  platform: 'debian',
+  version: 'jessie/sid',
   log_level: LOG_LEVEL
 }

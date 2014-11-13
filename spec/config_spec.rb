@@ -52,7 +52,8 @@ describe 'dotfiles::config' do
             group: 'got')
     expect(chef_run).to create_file('/home/got/.fluxbox/scripts/move-window.sh')
       .with(owner: 'got',
-            group: 'got')
+            group: 'got',
+            mode: '0755')
     expect(chef_run).to run_execute('chown-fluxbox')
       .with(command: 'chown -hR got:got /home/got/.fluxbox')
   end

@@ -35,6 +35,7 @@ end
 file "#{node['dotfiles']['user_home']}/.fluxbox/scripts/move-window.sh" do
   owner node['dotfiles']['user']
   group node['dotfiles']['user']
+  mode '0755'
 end
 
 %w(gitconfig gitignore).each do |item|

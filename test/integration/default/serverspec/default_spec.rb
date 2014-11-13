@@ -10,7 +10,7 @@ require 'spec_helper'
   end
 end
 
-%w(config/terminator conkyrc .fluxbox emacs.d emacs.d/.cask).each do |path|
+%w(config/terminator conkyrc .fluxbox emacs.d emacs.d/.cask emacs.d/prelude).each do |path|
   describe file("/home/got/.#{path}") do
     it { should be_directory }
     it { should be_grouped_into 'got' }
@@ -31,10 +31,20 @@ end
   end
 end
 
-%w(conkyrc/computer conkyrc/general conkyrc/network conkyrc/system config/terminator/config fluxbox/init).each do |item|
+%w(conkyrc/computer conkyrc/general conkyrc/network conkyrc/system config/terminator/config).each do |item|
   describe file("/home/got/.#{item}") do
     it { should be_file }
     it { should be_grouped_into 'got' }
     it { should be_owned_by 'got' }
+    its(:content) { should match(/D00402/) }
+  end
+end
+
+%w(fluxbox/init).each do |item|
+  describe file("/home/got/.#{item}") do
+    it { should be_file }
+    it { should be_grouped_into 'got' }
+    it { should be_owned_by 'got' }
+    its(:content) { should match(/GotRedBlack/) }
   end
 end

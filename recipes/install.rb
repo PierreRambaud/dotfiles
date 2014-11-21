@@ -17,6 +17,7 @@ git 'install-sliim-emacs' do
   repository 'https://github.com/Sliim/emacs.d.git'
   enable_submodules true
   user node['dotfiles']['user']
+  group node['dotfiles']['user']
   action :sync
 end
 
@@ -24,6 +25,7 @@ git 'install-sliim-cask' do
   destination "#{node['dotfiles']['user_home']}/.emacs.d/.cask"
   repository 'https://github.com/Sliim/emacs.d-cask.git'
   user node['dotfiles']['user']
+  group node['dotfiles']['user']
   action :sync
 end
 

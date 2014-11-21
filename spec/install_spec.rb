@@ -28,10 +28,12 @@ describe 'dotfiles::install' do
       .with(destination: '/home/got/.emacs.d',
             repository: 'https://github.com/Sliim/emacs.d.git',
             enable_submodules: true,
-            user: 'got')
+            user: 'got',
+            group: 'got')
     expect(chef_run).to sync_git('install-sliim-cask')
       .with(destination: '/home/got/.emacs.d/.cask',
             repository: 'https://github.com/Sliim/emacs.d-cask.git',
-            user: 'got')
+            user: 'got',
+            group: 'got')
   end
 end

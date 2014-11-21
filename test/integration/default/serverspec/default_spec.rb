@@ -31,7 +31,7 @@ end
   end
 end
 
-%w(conkyrc/computer conkyrc/general conkyrc/network conkyrc/system config/terminator/config).each do |item|
+%w(conkyrc/got config/terminator/config).each do |item|
   describe file("/home/got/.#{item}") do
     it { should be_file }
     it { should be_grouped_into 'got' }

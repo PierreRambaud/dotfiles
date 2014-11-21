@@ -65,14 +65,12 @@ describe 'dotfiles::config' do
             owner: 'got',
             group: 'got')
 
-    %w(computer general network system).each do |item|
-      expect(chef_run).to create_template("conkyrc/#{item}")
-        .with(source: "conkyrc/#{item}.erb",
-              path: "/home/got/.conkyrc/#{item}",
-              owner: 'got',
-              group: 'got')
-      expect(chef_run).to run_execute('chown-conkyrc')
-        .with(command: 'chown -hR got:got /home/got/.conkyrc')
-    end
+    expect(chef_run).to create_template('conkyrc/got')
+      .with(source: 'conkyrc/got.erb',
+            path: '/home/got/.conkyrc/got',
+            owner: 'got',
+            group: 'got')
+    expect(chef_run).to run_execute('chown-conkyrc')
+      .with(command: 'chown -hR got:got /home/got/.conkyrc')
   end
 end

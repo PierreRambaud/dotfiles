@@ -15,10 +15,7 @@ xscreensaver -no-splash &
 ck-launch-session &
 dbus-launch &
 nm-applet &
-conky -c ~/.conkyrc/system &
-conky -c ~/.conkyrc/network &
-conky -c ~/.conkyrc/general &
-conky -c ~/.conkyrc/computer &
+conky -c ~/.conkyrc/got &
 
 # And last but not least we start fluxbox.
 # Because it is the last app you have to run it with ''exec'' before it.

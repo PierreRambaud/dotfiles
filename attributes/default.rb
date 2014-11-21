@@ -20,7 +20,7 @@ default['dotfiles']['packages'] = %w(
   terminator
   fluxbox
   xscreensaver
-  conky
+  conky-all
   xdotool
   libbz2-dev
   libsqlite3-dev

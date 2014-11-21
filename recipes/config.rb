@@ -48,7 +48,7 @@ end
   end
 end
 
-%w(conkyrc/computer conkyrc/general conkyrc/network conkyrc/system config/terminator/config fluxbox/init).each do |item|
+%w(conkyrc/got config/terminator/config fluxbox/init).each do |item|
   template item do
     source "#{item}.erb"
     path "#{node['dotfiles']['user_home']}/.#{item}"

@@ -94,7 +94,7 @@ ${if_existing /proc/net/route wlan0}
   ${font Pf Tempesta Five:bold:size=7}${goto 300}${voffset -1}Public IP${goto 370}${execi 3600 wget -q -O - checkip.dyndns.org | sed -e 's/[^[:digit:]\|.]//g'}
 # |--ETH0
 ${else}
-  ${if_existing /proc/net/route eth0}${font Pf Tempesta Five:bold:size=6}${color1}${goto 300}${voffset -6}Up${goto 350}${color1}${totalup eth0} / ${color1}${upspeed eth0}
+  ${if_existing /proc/net/route eth0}${font Pf Tempesta Five:bold:size=6}${color1}${goto 300}${voffset -40}Up${goto 350}${color1}${totalup eth0} / ${color1}${upspeed eth0}
     ${font Pf Tempesta Five:bold:size=6}${goto 300}${color1}Down${goto 350}${color1}${totaldown eth0} / ${color1}${downspeed eth0}
     ${font Pf Tempesta Five:bold:size=7}${goto 300}${voffset 2}Local IP${goto 370}${addr eth0}
     ${font Pf Tempesta Five:bold:size=7}${goto 300}${voffset -1}Public IP${goto 370}${execi 3600 wget -q -O - checkip.dyndns.org | sed -e 's/[^[:digit:]\|.]//g'}

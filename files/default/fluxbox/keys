@@ -85,9 +85,6 @@ Mod1 F11 :Fullscreen
 # open the window menu
 Mod1 space :WindowMenu
 
-# exit fluxbox
-Control Mod1 Delete :Exit
-
 # change to previous/next workspace
 Control Mod1 Left :PrevWorkspace
 Control Mod1 Right :NextWorkspace
@@ -143,11 +140,13 @@ Control Mod4 F11 :TakeToWorkspace 11
 Control Mod4 F12 :TakeToWorkspace 12
 
 
-#FROM GOT
+# alienware volum control
 123 :Exec amixer -c 0 set PCM 2dB+
 122 :Exec amixer -c 0 set PCM 2dB-
 121 :Exec amixer sset Master toggle
 
-Control Mod1 46 :Exec xscreensaver-command -lock
+# lock session
+Control Mod1 l :Exec xscreensaver-command -lock
 
+# take screenshot
 None 107 :Exec import -frame -window $(xprop _NET_ACTIVE_WINDOW -root | awk '{print $5}') ~/screenshots/active_window_screenshot$(date +%F,%T).png

@@ -4,9 +4,10 @@ driver_config:
   require_chef_omnibus: true
 
 platforms:
-  - name: debian-7.6
+  - name: debian-8.0
     driver_config:
-      box: chef/debian-7.6
+      box: chef/debian-8.0
+      box_url: https://downloads.sourceforge.net/project/vagrantboxjessie/debian80.box
 suites:
   - name: 'default'
     run_list:

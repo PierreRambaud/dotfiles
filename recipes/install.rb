@@ -21,6 +21,7 @@ git 'install-emacs-configuration' do
   enable_submodules true
   user node['dotfiles']['user']
   group node['dotfiles']['user']
+  timeout 9000
   action :sync
 end
 

@@ -1,11 +1,12 @@
 source 'https://rubygems.org'
 
-gem 'chef', '~> 11.12.2'
+gem 'chef'
 gem 'berkshelf'
 
 group :integration do
   gem 'rubocop'
-  gem 'test-kitchen', '~> 1.2.1'
+  gem 'rake'
+  gem 'test-kitchen'
   gem 'kitchen-vagrant'
   gem 'serverspec'
   gem 'chefspec'

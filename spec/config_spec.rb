@@ -3,7 +3,7 @@
 require_relative 'spec_helper'
 
 describe 'dotfiles::config' do
-  let(:chef_run) { ChefSpec::Runner.new(DEBIAN_OPTS).converge(described_recipe) }
+  let(:chef_run) { ChefSpec::SoloRunner.new(DEBIAN_OPTS).converge(described_recipe) }
 
   it 'configure bash' do
     %w(bash_aliases bashrc).each do |item|
@@ -54,8 +54,6 @@ describe 'dotfiles::config' do
       .with(owner: 'got',
             group: 'got',
             mode: '0755')
-    expect(chef_run).to run_execute('chown-fluxbox')
-      .with(command: 'chown -hR got:got /home/got/.fluxbox')
   end
 
   it 'configure conkyrc' do
@@ -70,7 +68,5 @@ describe 'dotfiles::config' do
             path: '/home/got/.conkyrc/got',
             owner: 'got',
             group: 'got')
-    expect(chef_run).to run_execute('chown-conkyrc')
-      .with(command: 'chown -hR got:got /home/got/.conkyrc')
   end
 end

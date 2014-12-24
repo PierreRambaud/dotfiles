@@ -33,6 +33,8 @@ end
 
 execute 'install-cask' do
   command "python #{cask_installer}"
+  environment 'HOME' => node['dotfiles']['user_home'], 'USER' => node['dotfiles']['user']
+  ignore_failure true
 end
 
 execute 'install-emacs-dependencies' do

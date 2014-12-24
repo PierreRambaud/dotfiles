@@ -37,7 +37,8 @@ describe 'dotfiles::install' do
             path: cask_installer)
 
     expect(chef_run).to run_execute('install-cask')
-      .with(command: "python #{cask_installer}")
+      .with(command: "python #{cask_installer}",
+            environment: { 'HOME' => '/home/got', 'USER' => 'got' })
 
     expect(chef_run).to run_execute('install-emacs-dependencies')
       .with(cwd: '/home/got/.emacs.d',

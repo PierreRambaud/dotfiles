@@ -42,7 +42,7 @@ describe 'dotfiles::install' do
 
     expect(chef_run).to run_execute('install-emacs-dependencies')
       .with(cwd: '/home/got/.emacs.d',
-            environment: { 'PATH' => "#{ENV['PATH']}:#{ENV['HOME']}/.cask/bin" },
+            environment: { 'PATH' => "#{ENV['PATH']}:/home/got/.cask/bin" },
             command: 'cask install')
   end
 end

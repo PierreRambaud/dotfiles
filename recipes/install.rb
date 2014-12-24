@@ -39,6 +39,6 @@ end
 
 execute 'install-emacs-dependencies' do
   cwd "#{node['dotfiles']['user_home']}/.emacs.d"
-  environment 'PATH' => "#{node['dotfiles']['user_home']}:#{ENV['HOME']}/.cask/bin"
+  environment 'PATH' => "#{ENV['PATH']}:#{node['dotfiles']['user_home']}/.cask/bin"
   command 'cask install'
 end

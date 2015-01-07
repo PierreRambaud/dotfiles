@@ -28,6 +28,7 @@ default['dotfiles']['packages'] = %w(
   llvm
   apache2
   postgresql
+  htop
 )
 
 default['dotfiles']['theme'] = 'GotRedBlack'

@@ -2,6 +2,7 @@
 
 # Works only for dual screen in 1920x1080
 COMMAND="$1"
+NB_MONITORS="$(xrandr | grep ' connected' | wc -l)"
 TEXT="$(xrandr | grep Screen)"
 if [[ $TEXT =~ "current "([[:digit:]]+)[[:space:]]x[[:space:]]([[:digit:]]+) ]]; then
     WINDOW_X=${BASH_REMATCH[1]}
@@ -26,7 +27,7 @@ pidof fluxbox &> /dev/null && {
     CURRENT_WIDTH=$([[ $CURRENT_POSITION =~ "Width: "([[:digit:]]+) ]] && echo ${BASH_REMATCH[1]})
     IS_MAXIMIZE=$([[ $CURRENT_POSITION =~ "Window state:" ]] && echo 1)
 
-    HALF_WINDOW=$(echo $WINDOW_X / 2 | bc)
+    HALF_WINDOW=$(echo $WINDOW_X / $NB_MONITORS | bc)
 
     case $COMMAND in
         left)

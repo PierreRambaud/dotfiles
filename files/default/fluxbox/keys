@@ -141,9 +141,9 @@ Control Mod4 F12 :TakeToWorkspace 12
 
 
 # alienware volum control
-123 :Exec amixer -c 0 set PCM 2dB+
-122 :Exec amixer -c 0 set PCM 2dB-
-121 :Exec amixer sset Master toggle
+123 :Exec amixer -q set Master 5%+ unmute
+122 :Exec amixer -q set Master 5%- unmute
+121 :Exec amixer -q set Master toggle
 
 # lock session
 Control Mod1 l :Exec xscreensaver-command -lock

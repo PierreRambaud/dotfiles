@@ -15,7 +15,6 @@ xscreensaver -no-splash &
 ck-launch-session &
 dbus-launch &
 nm-applet &
-volti &
 conky -c ~/.conkyrc/got &
 
 # And last but not least we start fluxbox.

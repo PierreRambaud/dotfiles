@@ -29,7 +29,6 @@ default['dotfiles']['packages'] = %w(
   apache2
   postgresql
   htop
-  volti
   xinput
 )
 

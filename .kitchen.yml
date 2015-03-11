@@ -8,7 +8,11 @@ platforms:
     driver_config:
       box: chef/debian-8.0
       box_url: https://downloads.sourceforge.net/project/vagrantboxjessie/debian80.box
+
 suites:
   - name: 'default'
     run_list:
       - recipe[dotfiles]
+    driver:
+      customize:
+        memory: 4096

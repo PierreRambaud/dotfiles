@@ -1,13 +1,13 @@
 #!/bin/bash
 set -e
 apt-get update
-apt-get install -y curl sudo git
+apt-get install -y curl git build-essential autoconf
 
 echo 'Install Chef...'
 curl -L https://www.chef.io/chef/install.sh | sudo bash
 
 echo 'Install Berks...'
-/opt/chef/bin/gem install berkshelf --no-ri --no-rdoc
+/opt/chef/embedded/bin/gem install berkshelf --no-ri --no-rdoc
 
 if [[ ! -d '/tmp/dotfiles' ]]; then
   echo 'Clone dotfiles...'
@@ -20,7 +20,7 @@ fi
 if [[ ! -d '/opt/dotfiles/cookbooks' ]]; then
   pushd /tmp/dotfiles
   echo 'Install cookbooks...'
-  /opt/chef/bin/berks vendor /opt/dotfiles/cookbooks
+  /opt/chef/embedded/bin/berks vendor /opt/dotfiles/cookbooks
   popd
 fi
 
@@ -48,6 +48,6 @@ cat << EOT > /opt/dotfiles/dna.json
 }
 EOT
 
-chef-client -c /opt/dotfiles/solo.rb -j /opt/dotfiles/dna.json
+chef-client -c /opt/dotfiles/client.rb -j /opt/dotfiles/dna.json
 
 echo 'Done!'

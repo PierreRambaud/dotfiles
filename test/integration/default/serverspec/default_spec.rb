@@ -46,7 +46,7 @@ context '#tools' do
     it { should be_owned_by 'got' }
   end
 
-  %w(emacs rbenv conky fluxbox pyenv).each do |item|
+  %w(emacs rbenv conky fluxbox pyenv volay).each do |item|
     describe command("type #{item}") do
       its(:exit_status) { should eq 0 }
     end

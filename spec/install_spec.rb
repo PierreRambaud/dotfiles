@@ -16,6 +16,12 @@ describe 'dotfiles::install' do
     end
   end
 
+  it 'install gems packages' do
+    chef_run.node['dotfiles']['gem_packages'].each do |item|
+      expect(chef_run).to install_gem_package(item)
+    end
+  end
+
   it 'should create user' do
     expect(chef_run).to create_user('got')
       .with(supports: { manage_home: true },

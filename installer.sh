@@ -1,50 +1,53 @@
 #!/bin/bash
 set -e
 apt-get update
-apt-get install -y curl sudo git build-essential libxslt1-dev ruby-dev libxml++2.6-dev libreadline-dev ruby
+apt-get install -y curl sudo git
 
 echo 'Install Chef...'
 curl -L https://www.chef.io/chef/install.sh | sudo bash
 
 echo 'Install Berks...'
-gem install berkshelf --no-ri --no-rdoc
+/opt/chef/bin/gem install berkshelf --no-ri --no-rdoc
 
 if [[ ! -d '/tmp/dotfiles' ]]; then
   echo 'Clone dotfiles...'
-  mkdir -p /var/chef/
+  mkdir -p /opt/dotfiles/
   pushd /tmp
   git clone https://github.com/PierreRambaud/dotfiles.git
   popd
 fi
 
-if [[ ! -d '/var/chef/cookbooks' ]]; then
+if [[ ! -d '/opt/dotfiles/cookbooks' ]]; then
   pushd /tmp/dotfiles
   echo 'Install cookbooks...'
-  berks vendor /var/chef/cookbooks
+  /opt/chef/bin/berks vendor /opt/dotfiles/cookbooks
   popd
 fi
 
-cat << EOT > /var/chef/solo.rb
-node_name "my-compute-name"
-cookbook_path ['/var/chef/cookbooks']
-EOT
+mkdir -p /opt/dotfiles/{chef-client,roles,environments}
+mkdir -p /opt/dotfiles/data_bags/{zones,users}
 
-cat << EOT > /var/chef/dna.json
+tee /opt/dotfiles/client.rb <<EOF
+file_cache_path '/opt/dotfiles/chef-client'
+cookbook_path '/opt/dotfiles/cookbooks'
+data_bag_path '/opt/dotfiles/data_bags'
+role_path '/opt/dotfiles/roles'
+chef_zero.enabled true
+EOF
+
+cat << EOT > /opt/dotfiles/dna.json
 {
     "run_list": [
         "recipe[dotfiles]"
     ],
     "dotfiles": {
-        "user": "prambaud",
-        "user_home": "/home/prambaud",
+        "user": "got",
+        "user_home": "/home/got",
         "theme": "GotRedBlack"
     }
 }
 EOT
 
-chef-solo -c /var/chef/solo.rb -j /var/chef/dna.json
-
-echo 'Purge useless ruby on the system...'
-apt-get purge -y ruby-dev ruby
+chef-client -c /opt/dotfiles/solo.rb -j /opt/dotfiles/dna.json
 
 echo 'Done!'

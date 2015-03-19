@@ -6,6 +6,10 @@ node['dotfiles']['packages'].each do |item|
   end
 end
 
+node['dotfiles']['gem_packages'].each do |item|
+  gem_package item
+end
+
 user node['dotfiles']['user'] do
   supports manage_home: true
   home node['dotfiles']['user_home']

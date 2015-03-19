@@ -41,6 +41,12 @@ Attributes
     <td>List of packages chef must installed</td>
     <td><tt>Very long list</tt></td>
   </tr>
+  <tr>
+    <td><tt>['dotfiles']['gem_packages']</tt></td>
+    <td>Array</td>
+    <td>List of gems packages chef must installed for ruby system</td>
+    <td><tt>['volay']</tt></td>
+  </tr>
 </table>
 
 Usage
@@ -56,32 +62,6 @@ Just include `dotfiles` in your node's `run_list`:
   ]
 }
 ```
-
-####With Chef-solo
-```bash
-$ git clone https://github.com/PierreRambaud/dotfiles.git
-$ bundle install
-$ bundle exec berks vendor /var/chef/cookbooks
-
-$ cat /var/chef/solo.rb
-node_name "my-computer"
-cookbook_path ['/var/chef/cookbooks']
-
-$ cat /var/chef/dna.json
-{
-    "run_list": [
-        "recipe[dotfiles]"
-    ],
-    "dotfiles": {
-        "user": "prambaud",
-        "user_home": "/home/prambaud",
-        "theme": "GotBlueBlack"
-    }
-}
-
-$ chef-solo -c /var/chef/solo.rb -j /var/chef/dna.json
-```
-
 
 Run tests
 ---------

@@ -16,6 +16,8 @@ ck-launch-session &
 dbus-launch &
 nm-applet &
 conky -c ~/.conkyrc/got &
+volay &
+xinput --set-prop "10" "Device Accel Constant Deceleration" 3 &
 
 # And last but not least we start fluxbox.
 # Because it is the last app you have to run it with ''exec'' before it.

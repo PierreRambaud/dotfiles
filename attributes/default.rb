@@ -30,7 +30,10 @@ default['dotfiles']['packages'] = %w(
   postgresql
   htop
   xinput
+  ruby
+  ruby-dev
 )
+default['dotfiles']['gem_packages'] = %w(volay)
 
 default['dotfiles']['theme'] = 'GotRedBlack'
 default['dotfiles']['theme_color'] = 'D00402' if node['dotfiles']['theme'] == 'GotRedBlack'

@@ -1,10 +1,11 @@
 Got's dotfiles Cookbook [![Build Status](https://travis-ci.org/PierreRambaud/dotfiles.svg?branch=master)](https://travis-ci.org/PierreRambaud/dotfiles)
 ================
+
 My dotfiles with Opscode Chef.
 
 Requirements
 ------------
-Ruby 1.9.3 or higher
+Ruby 2.0 or higher
 
 Attributes
 ----------

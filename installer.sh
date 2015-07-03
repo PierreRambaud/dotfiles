@@ -2,52 +2,29 @@
 set -e
 apt-get update
 apt-get install -y curl git build-essential autoconf
+TYPE=$1
+DOTFILES_DIRECTORY='/opt/dotfiles'
+BIN_DIRECTORY='/opt/chef/embedded/bin'
 
 echo 'Install Chef...'
 curl -L https://www.chef.io/chef/install.sh | sudo bash
 
-echo 'Install Berks...'
-/opt/chef/embedded/bin/gem install berkshelf --no-ri --no-rdoc
-
-if [[ ! -d '/tmp/dotfiles' ]]; then
+if [[ ! -d "$DOTFILES_DIRECTORY" ]]; then
   echo 'Clone dotfiles...'
-  mkdir -p /opt/dotfiles/
-  pushd /tmp
-  git clone https://github.com/PierreRambaud/dotfiles.git
-  popd
+  git clone https://github.com/PierreRambaud/dotfiles.git $DOTFILES_DIRECTORY
 fi
 
-if [[ ! -d '/opt/dotfiles/cookbooks' ]]; then
-  pushd /tmp/dotfiles
+pushd $DOTFILES_DIRECTORY
+echo 'Bundle install...'
+$BIN_DIRECTORY/gem install bundler --no-ri --no-rdoc
+$BIN_DIRECTORY/bundle install
+
+if [[ ! -d "$DOTFILES_DIRECTORY/berks-cookbooks" ]]; then
   echo 'Install cookbooks...'
-  /opt/chef/embedded/bin/berks vendor /opt/dotfiles/cookbooks
-  popd
+  $BIN_DIRECTORY/bundle exec rake vendor
 fi
 
-mkdir -p /opt/dotfiles/{chef-client,roles,environments}
-mkdir -p /opt/dotfiles/data_bags/{zones,users}
-
-tee /opt/dotfiles/client.rb <<EOF
-file_cache_path '/opt/dotfiles/chef-client'
-cookbook_path '/opt/dotfiles/cookbooks'
-data_bag_path '/opt/dotfiles/data_bags'
-role_path '/opt/dotfiles/roles'
-chef_zero.enabled true
-EOF
-
-cat << EOT > /opt/dotfiles/dna.json
-{
-    "run_list": [
-        "recipe[dotfiles]"
-    ],
-    "dotfiles": {
-        "user": "got",
-        "user_home": "/home/got",
-        "theme": "GotRedBlack"
-    }
-}
-EOT
-
-chef-client -c /opt/dotfiles/client.rb -j /opt/dotfiles/dna.json
+popd
+$BIN_DIRECTORY/bundle exec rake converge:$TYPE
 
 echo 'Done!'

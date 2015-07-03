@@ -1,15 +1,14 @@
 AllCops:
   Include:
-    - '**/metadata.rb'
+    - metadata.rb
     - '**/Gemfile'
-    - '**/attributes/**/*.rb'
-    - '**/libraries/**/*.rb'
-    - '**/recipes/**/*.rb'
-    - '**/spec/**/*.rb'
-    - '**/test/**/*.rb'
-    - cookbooks/**/*.rb
+    - attributes/**/*
+    - libraries/**/*
+    - recipes/**/*
+    - spec/**/*
+    - test/**/*
   Exclude:
-    - berks-cookbooks/**/*
+    - cookbooks/**/*
     - vendor/**/*
 
 Encoding:

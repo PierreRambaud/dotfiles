@@ -1,0 +1,16 @@
+{
+    "name": "work",
+    "json_class": "Chef::Role",
+    "chef_type": "role",
+    "description": "Work configuration",
+    "default_attributes": {
+        "dotfiles": {
+            "user": "prambaud",
+            "user_home": "/home/prambaud",
+            "theme": "GotRedBlack"
+        }
+    },
+    "run_list": [
+        "recipe[dotfiles]"
+    ]
+}

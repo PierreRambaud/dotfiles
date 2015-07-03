@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
-$current_dir = File.dirname(__FILE__)
+def current_dir
+  File.dirname(__FILE__)
+end
 
 def run_command(command)
-  if File.exist?(File.join($current_dir, 'Gemfile.lock'))
+  if File.exist?(File.join(current_dir, 'Gemfile.lock'))
     sh %(bundle exec #{command})
   else
     sh %(chef exec #{command})
@@ -10,8 +12,8 @@ def run_command(command)
 end
 
 task :vendor do
-  rm_rf(File.join($current_dir, 'berks-coobkooks'))
-  rm_rf(File.join($current_dir, 'Berksfile.lock'))
+  rm_rf(File.join(current_dir, 'berks-coobkooks'))
+  rm_rf(File.join(current_dir, 'Berksfile.lock'))
   run_command('berks vendor')
 end
 

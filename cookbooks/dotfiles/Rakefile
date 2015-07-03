@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
-$current_dir = File.dirname(__FILE__)
+def current_dir
+  File.dirname(__FILE__)
+end
 
 def run_command(command)
-  if File.exist?(File.join($current_dir, 'Gemfile.lock'))
+  if File.exist?(File.join(current_dir, 'Gemfile.lock'))
     sh %(bundle exec #{command})
   else
     sh %(chef exec #{command})

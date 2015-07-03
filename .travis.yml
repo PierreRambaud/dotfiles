@@ -4,7 +4,7 @@ rvm:
 
 install:
   - bundle install
-  - cd cookbooks/dotfiles && bundle install
+  - pushd cookbooks/dotfiles && bundle install && popd
 script:
   - bundle exec rake
-  - cd cookbooks/dotfiles && bundle exec rake
+  - pushd cookbooks/dotfiles && bundle exec rake && popd

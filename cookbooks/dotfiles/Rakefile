@@ -1,0 +1,35 @@
+# -*- coding: utf-8 -*-
+def run_command(command)
+  if File.exist?('Gemfile.lock')
+    sh %(bundle exec #{command})
+  else
+    sh %(chef exec #{command})
+  end
+end
+
+namespace :test do
+  desc 'Tests suites runner'
+
+  task :checkstyle do
+    Rake::Task['test:foodcritic'].invoke
+    Rake::Task['test:rubocop'].invoke
+  end
+
+  task :specs do
+    run_command 'rspec spec'
+  end
+
+  task :foodcritic do
+    run_command 'foodcritic -f any .'
+  end
+
+  task :rubocop do
+    run_command :rubocop
+  end
+
+  task :kitchen do
+    run_command 'kitchen test'
+  end
+end
+
+task default: ['test:checkstyle', 'test:specs']

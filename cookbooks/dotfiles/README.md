@@ -1,16 +1,15 @@
-Got's dotfiles Cookbook [![Build Status](https://travis-ci.org/PierreRambaud/dotfiles.svg?branch=master)](https://travis-ci.org/PierreRambaud/dotfiles)
-================
+# Got's dotfiles Cookbook [![Build Status](https://travis-ci.org/PierreRambaud/dotfiles.svg?branch=master)](https://travis-ci.org/PierreRambaud/dotfiles)
 
-My dotfiles with Opscode Chef.
+My dotfiles generated with Chef.
 
-Requirements
-------------
+## Requirements
+
 Ruby 2.0 or higher
 
-Attributes
-----------
+## Attributes
 
-#### dotfiles::default
+### `dotfiles::default`
+
 <table>
   <tr>
     <th>Key</th>
@@ -50,9 +49,10 @@ Attributes
   </tr>
 </table>
 
-Usage
------
-#### dotfiles::default
+## Usage
+
+### `dotfiles::default`
+
 Just include `dotfiles` in your node's `run_list`:
 
 ```json
@@ -64,8 +64,7 @@ Just include `dotfiles` in your node's `run_list`:
 }
 ```
 
-Run tests
----------
+## Run tests
 
 `bundle install` to install dependencies
 
@@ -79,6 +78,9 @@ Run tests
 
 `bundle exec kitchen test` to execute kitchen
 
-License and Authors
--------------------
-Authors: Pierre Rambaud (pierre.rambaud86@gmail.com)
+
+## License and Authors
+
+Authors:
+
+  - [Pierre Rambaud](pierre.rambaud86@gmail.com)

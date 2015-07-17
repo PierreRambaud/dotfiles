@@ -9,6 +9,10 @@
 export PATH=$PATH:/opt/node/bin
 export NODE_PATH=/opt/node:/opt/node/lib/node_modules
 
+# --- GoLang
+export GOPATH=$HOME/gopath
+export PATH=$HOME/gopath/bin:$PATH
+
 # -- Argcomplete
 if type "register-python-argcomplete" &> /dev/null; then
     eval "$(register-python-argcomplete yoda)"

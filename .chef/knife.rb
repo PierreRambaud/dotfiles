@@ -10,4 +10,4 @@ node_name 'got'
 
 cache_type 'BasicFile'
 cache_options(path: "#{ENV['HOME']}/.chef/checksums")
-cookbook_path ["#{current_dir}/../cookbooks", "#{current_dir}/../berks-cookbooks"]
+cookbook_path ["#{current_dir}/../berks-cookbooks"]

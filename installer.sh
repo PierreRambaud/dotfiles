@@ -5,9 +5,14 @@ apt-get install -y curl git build-essential autoconf
 TYPE=$1
 DOTFILES_DIRECTORY='/opt/dotfiles'
 BIN_DIRECTORY='/opt/chef/embedded/bin'
+PATH=$BIN_DIRECTORY:$PATH
 
-echo 'Install Chef...'
-curl -L https://www.chef.io/chef/install.sh | sudo bash
+echo "PATH: $PATH"
+
+if [[ ! -d "$BIN_DIRECTORY" ]]; then
+  echo 'Install Chef...'
+  curl -L https://www.chef.io/chef/install.sh | sudo bash
+fi
 
 if [[ ! -d "$DOTFILES_DIRECTORY" ]]; then
   echo 'Clone dotfiles...'
@@ -24,7 +29,8 @@ if [[ ! -d "$DOTFILES_DIRECTORY/berks-cookbooks" ]]; then
   $BIN_DIRECTORY/bundle exec rake vendor
 fi
 
-popd
+echo "Converging..."
 $BIN_DIRECTORY/bundle exec rake converge:$TYPE
+popd
 
 echo 'Done!'

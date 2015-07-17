@@ -7,7 +7,11 @@ node['dotfiles']['packages'].each do |item|
 end
 
 node['dotfiles']['gem_packages'].each do |item|
-  gem_package item
+  gem_package item do
+    ignore_failure true
+    gem_binary '/usr/bin/gem'
+    action :install
+  end
 end
 
 user node['dotfiles']['user'] do

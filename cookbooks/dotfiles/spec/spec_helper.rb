@@ -19,4 +19,4 @@ DEBIAN_OPTS = {
   platform: 'debian',
   version: 'jessie/sid',
   log_level: LOG_LEVEL
-}
+}.freeze

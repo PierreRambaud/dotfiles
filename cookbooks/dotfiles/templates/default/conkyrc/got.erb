@@ -62,7 +62,7 @@ lua_draw_hook_pre conky_main
 
 TEXT
 ${font Pf Tempesta Five:bold:size=6}${voffset 16}${goto 160}${color1}${acpitemp} °C
-${font Pf Tempesta Five:bold:size=6}${voffset 2}${goto 128}${color1}CPU 1 ${alignr 330}${color1}${cpu cpu0}%
+${font Pf Tempesta Five:bold:size=6}${voffset 2}${goto 128}${color1}CPU 1${alignr 330}${color1}${cpu cpu0}%
 ${font Pf Tempesta Five:bold:size=6}${voffset 2}${goto 128}${color1}CPU 2${alignr 330}${color1}${cpu cpu1}%
 ${font Pf Tempesta Five:bold:size=6}${voffset 2}${goto 128}${color1}CPU 3${alignr 330}${color1}${cpu cpu2}%
 ${font Pf Tempesta Five:bold:size=6}${voffset 2}${goto 128}${color1}CPU 4${alignr 330}${color1}${cpu cpu3}%
@@ -104,7 +104,7 @@ ${endif}
 ${font Arial:size=22}${goto 110}${color1}${voffset -50}${time %H}:${time %M}:${time %S}
 ${font Arial:size=15}${goto 80}${voffset -10}${color0}${time %a} ${color0}${time %x}
 
-${font Arial:size=15}${color0}${goto 300}${voffset 0}BATTERIE
+${font Arial:size=15}${color0}${goto 300}${voffset 0}BATTERY
 ${font Arial:size=16}${color0}${goto 282}${voffset -2}${color1}${battery_percent BAT1}%
 
 

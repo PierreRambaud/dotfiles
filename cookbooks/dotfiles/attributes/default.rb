@@ -32,6 +32,7 @@ default['dotfiles']['packages'] = %w(
   xinput
   ruby
   ruby-dev
+  localepurge
 )
 default['dotfiles']['gem_packages'] = %w(volay)
 

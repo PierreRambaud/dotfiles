@@ -10,7 +10,7 @@ describe 'dotfiles::install_rbenv' do
     expect(chef_run).to include_recipe('rbenv::ruby_build')
   end
 
-  [['1.9.3-p551', false], ['2.0.0-p598', false], ['2.1.5', true]].each do |version, is_global|
+  [['1.9.3-p551', false], ['2.1.5', true], ['2.2.4', false], ['2.3.0', false]].each do |version, is_global|
     context "#ruby-#{version}" do
       it 'install ruby' do
         expect(chef_run).to install_rbenv_ruby(version)

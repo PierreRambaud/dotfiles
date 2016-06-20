@@ -3,7 +3,7 @@
 require 'spec_helper'
 
 context '#rbenv' do
-  ['1.9.3-p551', '2.0.0-p598', '2.1.5'].each do |version|
+  ['1.9.3-p551', '2.1.5', '2.2.4', '2.3.0'].each do |version|
     describe file("/home/got/.rbenv/versions/#{version}") do
       it { should be_directory }
       it { should be_grouped_into 'got' }

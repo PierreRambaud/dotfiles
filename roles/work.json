@@ -5,8 +5,8 @@
     "description": "Work configuration",
     "default_attributes": {
         "dotfiles": {
-            "user": "prambaud",
-            "user_home": "/home/prambaud",
+            "user": "got",
+            "user_home": "/home/got",
             "theme": "GotRedBlack"
         }
     },

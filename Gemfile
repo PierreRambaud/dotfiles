@@ -1,8 +1,9 @@
 source 'https://rubygems.org'
 
 gem 'rake'
-gem 'chef', '~>12'
-gem 'berkshelf'
+gem 'chef', '~>12', '<12.14'
+gem 'berkshelf', '~>4'
+gem 'rack', '~>1.6'
 
 group :integration do
   gem 'rubocop'

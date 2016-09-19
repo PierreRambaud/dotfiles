@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 
-override['emacs24']['version'] = '24.3'
 default['apt']['compile_time_update'] = true
 
 default['dotfiles']['user'] = 'got'
 default['dotfiles']['user_home'] = "/home/#{node['dotfiles']['user']}"
 default['dotfiles']['packages'] = %w(
+  emacs24
   tmux
   zsh
   texinfo

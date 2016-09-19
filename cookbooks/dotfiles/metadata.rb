@@ -13,6 +13,5 @@ recipe 'dotfiles', 'Installs and configures my dotfiles on a single system'
 
 depends 'apt'
 depends 'build-essential'
-depends 'emacs24'
 depends 'pyenv'
 depends 'rbenv'

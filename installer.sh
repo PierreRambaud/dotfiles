@@ -11,7 +11,7 @@ echo "PATH: $PATH"
 
 if [[ ! -d "$BIN_DIRECTORY" ]]; then
   echo 'Install Chef...'
-  curl -L https://www.chef.io/chef/install.sh | sudo bash
+  curl -L https://www.chef.io/chef/install.sh | bash
 fi
 
 if [[ ! -d "$DOTFILES_DIRECTORY" ]]; then

@@ -18,6 +18,7 @@ user node['dotfiles']['user'] do
   supports manage_home: true
   home node['dotfiles']['user_home']
   shell '/bin/bash'
+  manage_home true
 end
 
 include_recipe 'dotfiles::install_rbenv'

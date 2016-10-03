@@ -105,7 +105,7 @@ ${font Arial:size=22}${goto 110}${color1}${voffset -50}${time %H}:${time %M}:${t
 ${font Arial:size=15}${goto 80}${voffset -10}${color0}${time %a} ${color0}${time %x}
 
 ${font Arial:size=15}${color0}${goto 300}${voffset 0}BATTERY
-${font Arial:size=16}${color0}${goto 282}${voffset -2}${color1}${execi 30 acpi -b | grep -o '[0-9]*%$'}
+${font Arial:size=16}${color0}${goto 282}${voffset -2}${color1}${execi 30 acpi -b | grep -o '[0-9]*%'}
 
 
 #${font Pf Tempesta Five:bold:size=6}${goto 180}Uptime${color1}${alignr 100}${uptime_short}

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-%w(bash_aliases bashrc).each do |item|
+%w(bash_aliases bash_colors bashrc).each do |item|
   cookbook_file item do
     source item
     path "#{node['dotfiles']['user_home']}/.#{item}"

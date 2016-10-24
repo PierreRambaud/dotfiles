@@ -21,6 +21,10 @@ describe 'dotfiles::install' do
       expect(chef_run).to install_gem_package(item)
     end
   end
+end
+
+describe 'dotfiles::install' do
+  let(:chef_run) { ChefSpec::SoloRunner.new(DEBIAN_OPTS).converge(described_recipe) }
 
   it 'should create user' do
     expect(chef_run).to create_user('got')
@@ -28,6 +32,10 @@ describe 'dotfiles::install' do
             home: '/home/got',
             shell: '/bin/bash')
   end
+end
+
+describe 'dotfiles::install' do
+  let(:chef_run) { ChefSpec::SoloRunner.new(DEBIAN_OPTS).converge(described_recipe) }
 
   it 'copy emacs configuration' do
     expect(chef_run).to sync_git('install-emacs-configuration')

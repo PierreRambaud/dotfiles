@@ -2,7 +2,7 @@
 #
 require 'spec_helper'
 
-context '#config' do
+context '#config git and bash' do
   %w(gitconfig gitignore bashrc bash_aliases bash_colors).each do |item|
     describe file("/home/got/.#{item}") do
       it { should be_file }
@@ -10,7 +10,9 @@ context '#config' do
       it { should be_owned_by 'got' }
     end
   end
+end
 
+context '#config directories' do
   %w(config/terminator conkyrc fluxbox emacs.d emacs.d/.cask emacs.d/prelude).each do |path|
     describe file("/home/got/.#{path}") do
       it { should be_directory }
@@ -18,7 +20,9 @@ context '#config' do
       it { should be_owned_by 'got' }
     end
   end
+end
 
+context '#config conky terminator themes' do
   %w(conkyrc/got config/terminator/config).each do |item|
     describe file("/home/got/.#{item}") do
       it { should be_file }
@@ -27,7 +31,9 @@ context '#config' do
       its(:content) { should match(/D00402/) }
     end
   end
+end
 
+context '#config fluxbox theme' do
   %w(fluxbox/init).each do |item|
     describe file("/home/got/.#{item}") do
       it { should be_file }

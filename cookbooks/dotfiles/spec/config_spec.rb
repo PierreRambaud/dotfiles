@@ -14,6 +14,10 @@ describe 'dotfiles::config' do
               group: 'got')
     end
   end
+end
+
+describe 'dotfiles::config' do
+  let(:chef_run) { ChefSpec::SoloRunner.new(DEBIAN_OPTS).converge(described_recipe) }
 
   it 'configure terminator' do
     expect(chef_run).to create_directory('terminator')
@@ -28,6 +32,10 @@ describe 'dotfiles::config' do
             owner: 'got',
             group: 'got')
   end
+end
+
+describe 'dotfiles::config' do
+  let(:chef_run) { ChefSpec::SoloRunner.new(DEBIAN_OPTS).converge(described_recipe) }
 
   it 'configure git' do
     %w(gitconfig gitignore).each do |item|
@@ -38,6 +46,10 @@ describe 'dotfiles::config' do
               group: 'got')
     end
   end
+end
+
+describe 'dotfiles::config' do
+  let(:chef_run) { ChefSpec::SoloRunner.new(DEBIAN_OPTS).converge(described_recipe) }
 
   it 'configure fluxbox' do
     expect(chef_run).to create_remote_directory('fluxbox')
@@ -55,6 +67,10 @@ describe 'dotfiles::config' do
             group: 'got',
             mode: '0755')
   end
+end
+
+describe 'dotfiles::config' do
+  let(:chef_run) { ChefSpec::SoloRunner.new(DEBIAN_OPTS).converge(described_recipe) }
 
   it 'configure conkyrc' do
     expect(chef_run).to create_remote_directory('conkyrc')

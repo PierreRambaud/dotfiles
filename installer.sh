@@ -2,6 +2,7 @@
 set -e
 apt-get update
 apt-get install -y curl git build-essential autoconf
+
 TYPE=$1
 DOTFILES_DIRECTORY='/opt/dotfiles'
 BIN_DIRECTORY='/opt/chef/embedded/bin'
@@ -22,7 +23,7 @@ fi
 pushd $DOTFILES_DIRECTORY
 echo 'Bundle install...'
 $BIN_DIRECTORY/gem install bundler --no-ri --no-rdoc
-$BIN_DIRECTORY/bundle install
+$BIN_DIRECTORY/bundle install --without integration
 
 if [[ ! -d "$DOTFILES_DIRECTORY/berks-cookbooks" ]]; then
   echo 'Install cookbooks...'

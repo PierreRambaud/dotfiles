@@ -7,7 +7,7 @@
         "dotfiles": {
             "user": "got",
             "user_home": "/home/got",
-            "theme": "GotRedBlack"
+            "theme": "GotWhiteBlack"
         }
     },
     "run_list": [

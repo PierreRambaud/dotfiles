@@ -45,7 +45,7 @@ context '#config fluxbox theme' do
 end
 
 context '#tools' do
-  describe file('/home/got/.fluxbox/scripts/move-window.sh') do
+  describe file('/home/got/.fluxbox/scripts/move-window.py') do
     it { should be_file }
     it { should be_executable }
     it { should be_grouped_into 'got' }

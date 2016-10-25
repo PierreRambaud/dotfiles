@@ -27,7 +27,7 @@ end
   end
 end
 
-file "#{node['dotfiles']['user_home']}/.fluxbox/scripts/move-window.sh" do
+file "#{node['dotfiles']['user_home']}/.fluxbox/scripts/move-window.py" do
   owner node['dotfiles']['user']
   group node['dotfiles']['user']
   mode '0755'

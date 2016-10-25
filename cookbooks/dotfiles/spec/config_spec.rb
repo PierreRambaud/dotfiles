@@ -62,7 +62,7 @@ describe 'dotfiles::config' do
             path: '/home/got/.fluxbox/init',
             owner: 'got',
             group: 'got')
-    expect(chef_run).to create_file('/home/got/.fluxbox/scripts/move-window.sh')
+    expect(chef_run).to create_file('/home/got/.fluxbox/scripts/move-window.py')
       .with(owner: 'got',
             group: 'got',
             mode: '0755')

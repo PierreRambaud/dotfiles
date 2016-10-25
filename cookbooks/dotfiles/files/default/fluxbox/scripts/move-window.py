@@ -36,19 +36,19 @@ class Screens:
         value = None
         for screen in self.screens:
             if direction == 'left':
-                if self.window.x > (screen.width + screen.position):
+                if self.window.x >= (screen.width + screen.position):
                     value = self.window.x - screen.width
-                elif value:
+                elif value is not None:
                     value -= screen.position
 
             if direction == 'right' and self.window.x < (screen.position):
                 value = self.window.x + screen.position
                 break
 
-        if value and value >= (self.max_width - self.window.width):
-            value = self.max_width - self.window.width
+        if value is not None:
+            if value >= (self.max_width - self.window.width):
+                value = self.max_width - self.window.width
 
-        if value:
             self.fluxbox_move(value)
             self.fluxbox_maximize()
 

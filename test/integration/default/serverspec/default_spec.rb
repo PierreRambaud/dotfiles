@@ -3,7 +3,7 @@
 require 'spec_helper'
 
 context '#config git and bash' do
-  %w(gitconfig gitignore bashrc bash_aliases bash_colors).each do |item|
+  %w(gitconfig gitignore bashrc bash_aliases bash_colors xscreensaver).each do |item|
     describe file("/home/got/.#{item}") do
       it { should be_file }
       it { should be_grouped_into 'got' }

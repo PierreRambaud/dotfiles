@@ -5,8 +5,8 @@ require_relative 'spec_helper'
 describe 'dotfiles::config' do
   let(:chef_run) { ChefSpec::SoloRunner.new(DEBIAN_OPTS).converge(described_recipe) }
 
-  it 'configure bash' do
-    %w(bash_aliases bash_colors bashrc).each do |item|
+  it 'configure bash and xscreensaver' do
+    %w(bash_aliases bash_colors bashrc xscreensaver).each do |item|
       expect(chef_run).to create_cookbook_file(item)
         .with(source: item,
               path: "/home/got/.#{item}",

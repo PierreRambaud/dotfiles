@@ -9,6 +9,7 @@ alias vi='emacs -nw'
 alias vim='emacs -nw'
 
 alias g='git'
+alias gap='git add -p'
 alias gs='git status'
 alias gss='git status -s'
 alias gc='git commit'

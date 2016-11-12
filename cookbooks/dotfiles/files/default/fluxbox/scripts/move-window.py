@@ -18,6 +18,8 @@ class Screens:
             self.max_width += int(screen[0])
             self.screens.append(Screen(int(screen[0]), int(screen[1]), int(screen[2])))
 
+        self.screens = sorted(self.screens, key=lambda screen: screen.position)
+
         self.current_window()
         self.move(direction)
 

@@ -11,4 +11,4 @@ install:
 
 script:
   - bundle exec rake
-  - cd cookbooks/dotfiles bundle exec rake
+  - cd cookbooks/dotfiles && bundle exec rake

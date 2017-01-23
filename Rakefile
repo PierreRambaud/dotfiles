@@ -17,17 +17,19 @@ task :vendor do
   run_command('berks vendor')
 end
 
+desc 'Tests suites runner'
 namespace :test do
-  desc 'Tests suites runner'
-
+  desc 'Foodcritic'
   task :foodcritic do
     run_command('foodcritic -f any .')
   end
 
+  desc 'Rubocop'
   task :rubocop do
     run_command(:rubocop)
   end
 
+  desc 'Kitchen'
   task :kitchen do
     run_command('kitchen test')
   end

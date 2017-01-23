@@ -4,10 +4,10 @@ driver_config:
   require_chef_omnibus: true
 
 platforms:
-  - name: debian-8.0
-    driver_config:
-      box: chef/debian-8.0
-      box_url: https://downloads.sourceforge.net/project/vagrantboxjessie/debian80.box
+  - name: debian-8.6
+    driver:
+      image: debian:8
+      pid_one_command: /bin/systemd
 
 suites:
   - name: 'default'

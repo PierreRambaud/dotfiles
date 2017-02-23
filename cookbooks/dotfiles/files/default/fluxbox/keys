@@ -145,6 +145,7 @@ Control Mod4 F12 :TakeToWorkspace 12
 
 # lock session
 Control Mod1 l :Exec xscreensaver-command -lock
+Control Mod1 k :Exec xscreensaver-command -lock && systemctl suspend
 
 # take screenshot
 None 107 :Exec import -frame -window $(xprop _NET_ACTIVE_WINDOW -root | awk '{print $5}') ~/screenshots/active_window_screenshot$(date +%F,%T).png

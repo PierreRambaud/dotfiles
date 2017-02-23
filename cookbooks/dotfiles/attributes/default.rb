@@ -34,8 +34,9 @@ default['dotfiles']['packages'] = %w(
   ruby
   ruby-dev
   localepurge
+  pm-utils
 )
-default['dotfiles']['gem_packages'] = %w(volay)
+default['dotfiles']['gem_packages'] = %w()
 
 default['dotfiles']['theme'] = 'GotRedBlack'
 default['dotfiles']['theme_color'] = 'D00402' if node['dotfiles']['theme'] == 'GotRedBlack'

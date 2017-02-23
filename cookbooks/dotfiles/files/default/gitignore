@@ -1,3 +1,6 @@
 .project
 .python-version
 *.pyc
+env
+*~
+*.swp

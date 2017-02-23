@@ -68,3 +68,6 @@ fi
 if type "xset" &> /dev/null; then
    xset -b
 fi
+
+# Pyenv virtualenv
+eval "$(pyenv virtualenv-init -)"

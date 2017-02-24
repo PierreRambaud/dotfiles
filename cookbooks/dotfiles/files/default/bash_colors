@@ -52,7 +52,8 @@ function parse_git_dirty {
 
 # Determine active Python virtualenv details.
 function set_virtualenv () {
-    if [[ `pyenv version-name` != "system" ]] ; then
+    status=`pyenv version-name 2>&1 | tee`
+    if [[ $status  != "system" ]] ; then
         echo "[`pyenv version-name`] "
     fi
 }

@@ -10,4 +10,4 @@
     username = GoT
 [core]
     editor = emacs
-    excludesfiles = ~/.gitignore
+    excludesfile = ~/.gitignore

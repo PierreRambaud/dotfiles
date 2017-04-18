@@ -58,4 +58,4 @@ function set_virtualenv () {
     fi
 }
 
-export PS1="${GRAY}\`set_virtualenv\`${COLOR_NONE}${GREEN}\u@\h${COLOR_NONE}:${BLUE}\w${COLOR_NONE}${CYAN}\`parse_git_branch\`${COLOR_NONE}\$ "
+export PS1="\e[?2004l${GRAY}\`set_virtualenv\`${COLOR_NONE}${GREEN}\u@\h${COLOR_NONE}:${BLUE}\w${COLOR_NONE}${CYAN}\`parse_git_branch\`${COLOR_NONE}\$ "

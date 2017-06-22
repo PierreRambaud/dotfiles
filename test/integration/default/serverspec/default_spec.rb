@@ -3,7 +3,7 @@
 require 'spec_helper'
 
 context '#config git and bash' do
-  %w(gitconfig gitignore bashrc bash_aliases bash_colors xscreensaver).each do |item|
+  %w[gitconfig gitignore bashrc bash_aliases bash_colors xscreensaver].each do |item|
     describe file("/home/got/.#{item}") do
       it { should be_file }
       it { should be_grouped_into 'got' }
@@ -13,7 +13,7 @@ context '#config git and bash' do
 end
 
 context '#config directories' do
-  %w(config/terminator conkyrc fluxbox emacs.d emacs.d/.cask emacs.d/prelude).each do |path|
+  %w[config/terminator conkyrc fluxbox emacs.d emacs.d/.cask emacs.d/prelude).each do |path|
     describe file("/home/got/.#{path}") do
       it { should be_directory }
       it { should be_grouped_into 'got' }
@@ -23,7 +23,7 @@ context '#config directories' do
 end
 
 context '#config conky terminator themes' do
-  %w(conkyrc/got config/terminator/config).each do |item|
+  %w[conkyrc/got config/terminator/config].each do |item|
     describe file("/home/got/.#{item}") do
       it { should be_file }
       it { should be_grouped_into 'got' }
@@ -34,7 +34,7 @@ context '#config conky terminator themes' do
 end
 
 context '#config fluxbox theme' do
-  %w(fluxbox/init).each do |item|
+  %w[fluxbox/init].each do |item|
     describe file("/home/got/.#{item}") do
       it { should be_file }
       it { should be_grouped_into 'got' }
@@ -52,7 +52,7 @@ context '#tools' do
     it { should be_owned_by 'got' }
   end
 
-  %w(emacs rbenv conky fluxbox pyenv volay).each do |item|
+  %w[emacs rbenv conky fluxbox pyenv volay].each do |item|
     describe command("type #{item}") do
       its(:exit_status) { should eq 0 }
     end

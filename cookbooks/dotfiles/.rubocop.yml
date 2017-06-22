@@ -16,6 +16,11 @@ Encoding:
     - metadata.rb
     - Gemfile
 
+Style/FileName:
+  Exclude:
+    - Rakefile
+    - Berksfile
+
 NumericLiterals:
   Enabled: false
 

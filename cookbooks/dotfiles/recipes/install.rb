@@ -15,7 +15,6 @@ node['dotfiles']['gem_packages'].each do |item|
 end
 
 user node['dotfiles']['user'] do
-  supports manage_home: true
   home node['dotfiles']['user_home']
   shell '/bin/bash'
   manage_home true

@@ -15,6 +15,6 @@ end
 
 DEBIAN_OPTS = {
   platform: 'debian',
-  version: 'jessie/sid',
+  version: '8.0',
   log_level: :fatal
 }.freeze

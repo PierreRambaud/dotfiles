@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-%w(bash_aliases bash_colors bashrc xscreensaver).each do |item|
+%w[bash_aliases bash_colors bashrc xscreensaver].each do |item|
   cookbook_file item do
     source item
     path "#{node['dotfiles']['user_home']}/.#{item}"
@@ -18,7 +18,7 @@ directory 'terminator' do
   action :create
 end
 
-%w(conkyrc fluxbox).each do |item|
+%w[conkyrc fluxbox].each do |item|
   remote_directory item do
     path "#{node['dotfiles']['user_home']}/.#{item}"
     source item
@@ -33,7 +33,7 @@ file "#{node['dotfiles']['user_home']}/.fluxbox/scripts/move-window.py" do
   mode '0755'
 end
 
-%w(gitconfig gitignore).each do |item|
+%w[gitconfig gitignore].each do |item|
   cookbook_file item do
     source item
     path "#{node['dotfiles']['user_home']}/.#{item}"
@@ -43,7 +43,7 @@ end
   end
 end
 
-%w(conkyrc/got config/terminator/config fluxbox/init).each do |item|
+%w[conkyrc/got config/terminator/config fluxbox/init].each do |item|
   template item do
     source "#{item}.erb"
     path "#{node['dotfiles']['user_home']}/.#{item}"

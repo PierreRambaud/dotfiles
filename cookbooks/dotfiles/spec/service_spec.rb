@@ -8,7 +8,9 @@ describe 'dotfiles::service' do
   it 'restart fluxbox' do
     expect(chef_run).to run_execute('restart-fluxbox').with(
       command: 'fluxbox-remote "Restart"',
-      path: %w(/usr/bin /bin)
+      environment: {
+        'PATH' => "/bin:/usr/bin:#{ENV['PATH']}"
+      }
     )
   end
 end

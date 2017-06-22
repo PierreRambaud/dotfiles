@@ -5,7 +5,7 @@ default['pyenv']['git_ref'] = 'master'
 
 default['dotfiles']['user'] = 'got'
 default['dotfiles']['user_home'] = "/home/#{node['dotfiles']['user']}"
-default['dotfiles']['packages'] = %w(
+default['dotfiles']['packages'] = %w[
   emacs24
   tmux
   zsh
@@ -35,8 +35,8 @@ default['dotfiles']['packages'] = %w(
   ruby-dev
   localepurge
   pm-utils
-)
-default['dotfiles']['gem_packages'] = %w()
+]
+default['dotfiles']['gem_packages'] = %w[]
 
 default['dotfiles']['theme'] = 'GotRedBlack'
 default['dotfiles']['theme_color'] = 'D00402' if node['dotfiles']['theme'] == 'GotRedBlack'

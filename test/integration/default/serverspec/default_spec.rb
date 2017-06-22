@@ -13,7 +13,7 @@ context '#config git and bash' do
 end
 
 context '#config directories' do
-  %w[config/terminator conkyrc fluxbox emacs.d emacs.d/.cask emacs.d/prelude).each do |path|
+  %w[config/terminator conkyrc fluxbox emacs.d emacs.d/.cask emacs.d/prelude].each do |path|
     describe file("/home/got/.#{path}") do
       it { should be_directory }
       it { should be_grouped_into 'got' }

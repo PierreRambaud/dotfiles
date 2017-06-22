@@ -54,7 +54,7 @@ conky.config = {
    temperature_unit = 'celsius',
 
    default_color = '#999999',
-   color0 = '<%= @node[\'dotfiles\'][\'theme_color\'] %>',
+   color0 = '#<%= @node['dotfiles']['theme_color'] %>',
    color1 = '#FFFFFF',
 
    -- Lua Load

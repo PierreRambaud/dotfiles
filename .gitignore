@@ -12,3 +12,4 @@ clients/
 nodes/
 vms/
 .chef/local-mode-cache/
+.ruby-version

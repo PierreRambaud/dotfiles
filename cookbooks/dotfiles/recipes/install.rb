@@ -21,6 +21,7 @@ user node['dotfiles']['user'] do
 end
 
 include_recipe 'dotfiles::install_rbenv'
+include_recipe 'dotfiles::install_ndenv'
 include_recipe 'dotfiles::install_pyenv'
 
 git 'install-emacs-configuration' do

@@ -7,6 +7,7 @@ describe 'dotfiles::install' do
 
   it 'include recipes' do
     expect(chef_run).to include_recipe('dotfiles::install_rbenv')
+    expect(chef_run).to include_recipe('dotfiles::install_ndenv')
     expect(chef_run).to include_recipe('dotfiles::install_pyenv')
   end
 

@@ -2,7 +2,7 @@ GREEN="\[\033[1;32m\]"
 BLUE="\[\033[1;34m\]"
 CYAN="\[\033[1;36m\]"
 GRAY="\[\033[1;37m\]"
-COLOR_NONE="\[\e[0m\]"
+COLOR_NONE="\[\e[00m\]"
 
 function parse_git_branch() {
     BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
@@ -58,4 +58,4 @@ function set_virtualenv () {
     fi
 }
 
-export PS1="\e[?2004l${GRAY}\`set_virtualenv\`${COLOR_NONE}${GREEN}\u@\h${COLOR_NONE}:${BLUE}\w${COLOR_NONE}${CYAN}\`parse_git_branch\`${COLOR_NONE}\$ "
+export PS1="${GRAY}\`set_virtualenv\`${COLOR_NONE}${GREEN}\u@\h${COLOR_NONE}:${BLUE}\w${COLOR_NONE}${CYAN}\`parse_git_branch\`${COLOR_NONE}\$ "

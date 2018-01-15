@@ -6,6 +6,16 @@ default['pyenv']['git_ref'] = 'master'
 default['dotfiles']['user'] = 'got'
 default['dotfiles']['user_home'] = "/home/#{node['dotfiles']['user']}"
 default['dotfiles']['packages'] = %w[
+  make
+  build-essential
+  libssl-dev
+  zlib1g-dev
+  libreadline-dev
+  curl
+  libncurses5-dev
+  libncursesw5-dev
+  xz-utils
+  tk-dev
   emacs24
   tmux
   zsh

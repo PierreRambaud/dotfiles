@@ -7,8 +7,8 @@ export PATH=$PATH:/opt/node/bin
 export NODE_PATH=/opt/node:/opt/node/lib/node_modules
 
 # --- GoLang
-export GOPATH=$HOME/gopath
-export PATH=$HOME/gopath/bin:$PATH
+export GOENV_ROOT="$HOME/.goenv"
+export PATH="$GOENV_ROOT/bin:$PATH"
 
 # -- Argcomplete
 if type "register-python-argcomplete" &> /dev/null; then
@@ -70,4 +70,11 @@ if type "xset" &> /dev/null; then
 fi
 
 # Pyenv virtualenv
-eval "$(pyenv virtualenv-init -)"
+if [ -x "$(command -v pyenv)" ]; then
+    eval "$(pyenv virtualenv-init -)"
+fi
+
+# Goenv init
+if [ -x "$(command -v goenv)" ]; then
+    eval "$(goenv init -)"
+fi

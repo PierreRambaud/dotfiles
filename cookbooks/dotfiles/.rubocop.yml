@@ -1,4 +1,5 @@
 AllCops:
+  TargetRubyVersion: 2.3
   Include:
     - metadata.rb
     - '**/Gemfile'
@@ -8,7 +9,6 @@ AllCops:
     - spec/**/*
     - test/**/*
   Exclude:
-    - cookbooks/**/*
     - vendor/**/*
 
 Encoding:
@@ -16,7 +16,7 @@ Encoding:
     - metadata.rb
     - Gemfile
 
-Style/FileName:
+Naming/FileName:
   Exclude:
     - Rakefile
     - Berksfile

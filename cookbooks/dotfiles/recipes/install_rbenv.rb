@@ -1,9 +1,8 @@
-# -*- coding: utf-8 -*-
+# frozen_string_literal: true
 
-node.default['rbenv']['user'] = node['dotfiles']['user']
-node.default['rbenv']['group'] = node['dotfiles']['user']
-node.default['rbenv']['user_home'] = node['dotfiles']['user_home']
-node.default['rbenv']['root_path'] = "#{node['dotfiles']['user_home']}/.rbenv"
+rbenv_user_install node['dotfiles']['user']
 
-include_recipe 'rbenv'
-include_recipe 'rbenv::ruby_build'
+rbenv_plugin 'ruby-build' do
+  git_url 'https://github.com/rbenv/ruby-build.git'
+  user node['dotfiles']['user']
+end

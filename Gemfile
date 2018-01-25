@@ -1,11 +1,13 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 
-gem 'berkshelf', '~>4'
-gem 'chef', '~>12', '<12.14'
-gem 'rack', '~>1.6'
+gem 'berkshelf'
+gem 'chef', '~>13'
+gem 'rack'
 gem 'rake'
 
-group :integration do
+group :development do
   gem 'chefspec'
   gem 'foodcritic'
   gem 'kitchen-vagrant'

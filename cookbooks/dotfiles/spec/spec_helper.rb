@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# frozen_string_literal: true
 
 require 'chefspec'
 require 'chefspec/berkshelf'
@@ -15,6 +15,6 @@ end
 
 DEBIAN_OPTS = {
   platform: 'debian',
-  version: '8.0',
+  version: '9.3',
   log_level: :fatal
 }.freeze

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 name 'dotfiles'
 maintainer 'Pierre Rambaud'
 maintainer_email 'pierre.rambaud86@gmail.com'
@@ -18,5 +20,5 @@ recipe 'dotfiles', 'Installs and configures my dotfiles on a single system'
 depends 'apt'
 depends 'build-essential'
 depends 'pyenv'
-depends 'rbenv'
+depends 'ruby_rbenv'
 depends 'ndenv'

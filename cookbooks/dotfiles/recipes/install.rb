@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# frozen_string_literal: true
 
 node['dotfiles']['packages'].each do |item|
   package item do

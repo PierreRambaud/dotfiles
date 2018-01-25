@@ -1,4 +1,5 @@
-# -*- coding: utf-8 -*-
+# frozen_string_literal: true
+
 def current_dir
   File.dirname(__FILE__)
 end

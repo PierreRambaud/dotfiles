@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# frozen_string_literal: true
 
 require_relative 'spec_helper'
 
@@ -29,7 +29,7 @@ describe 'dotfiles::install' do
 
   it 'should create user' do
     expect(chef_run).to create_user('got')
-      .with(supports: { manage_home: true },
+      .with(manage_home: true,
             home: '/home/got',
             shell: '/bin/bash')
   end

@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# frozen_string_literal: true
 
 node.default['ndenv']['user'] = node['dotfiles']['user']
 node.default['ndenv']['user_home'] = node['dotfiles']['user_home']

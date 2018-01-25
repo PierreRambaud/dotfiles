@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# frozen_string_literal: true
 
 %w[bash_aliases bash_colors bashrc xscreensaver].each do |item|
   cookbook_file item do

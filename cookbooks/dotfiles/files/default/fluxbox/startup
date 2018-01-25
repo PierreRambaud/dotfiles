@@ -16,8 +16,6 @@ ck-launch-session &
 dbus-launch &
 nm-applet &
 conky -c ~/.conkyrc/got &
-pulseaudio -k &
-pulseaudio -D &
 /usr/local/bin/volay &
 xinput --set-prop "10" "Device Accel Constant Deceleration" 5 &
 

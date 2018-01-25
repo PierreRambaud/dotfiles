@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# frozen_string_literal: true
 
 default['apt']['compile_time_update'] = true
 default['pyenv']['git_ref'] = 'master'

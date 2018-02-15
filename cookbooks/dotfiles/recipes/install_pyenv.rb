@@ -3,7 +3,7 @@
 node.default['pyenv']['user_installs'] = [
   {
     'user'     => node['dotfiles']['user'],
-    'pythons'  => ['2.7.14', '3.6.3'],
+    'pythons'  => ['3.6.3'],
     'global'   => '3.6.3'
   }
 ]

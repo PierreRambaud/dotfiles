@@ -2,8 +2,6 @@
 .bundle/
 .vagrant
 .coverage/
-Berksfile.lock
-Gemfile.lock
 vendor
 .kitchen/
 .kitchen.local.yml

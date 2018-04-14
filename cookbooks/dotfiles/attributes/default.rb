@@ -6,45 +6,56 @@ default['pyenv']['git_ref'] = 'master'
 default['dotfiles']['user'] = 'got'
 default['dotfiles']['user_home'] = "/home/#{node['dotfiles']['user']}"
 default['dotfiles']['packages'] = %w[
-  make
+  apache2
   build-essential
-  libssl-dev
-  zlib1g-dev
-  libreadline-dev
+  conky-all
   curl
+  emacs24
+  fluxbox
+  htop
+  libbz2-dev
+  libgif-dev
+  libgtk2.0-dev
+  libjpeg-dev
+  libncurses-dev
   libncurses5-dev
   libncursesw5-dev
-  xz-utils
-  tk-dev
-  emacs24
-  tmux
-  zsh
-  texinfo
+  libpng-dev
+  libreadline-dev
+  libsqlite3-dev
+  libssl-dev
+  libtiff-dev
   libx11-dev
   libxpm-dev
-  libjpeg-dev
-  libpng-dev
-  libgif-dev
-  libtiff-dev
-  libgtk2.0-dev
-  libncurses-dev
-  terminator
-  fluxbox
-  xscreensaver
-  conky-all
-  xdotool
-  libbz2-dev
-  libsqlite3-dev
-  wget
   llvm
-  apache2
+  localepurge
+  make
+  php
+  php-bz2
+  php-curl
+  php-gd
+  php-intl
+  php-mysql
+  php-pdo
+  php-pear
+  php-pgsql
+  php-xdebug
+  php-xml
+  pm-utils
   postgresql
-  htop
-  xinput
   ruby
   ruby-dev
-  localepurge
-  pm-utils
+  terminator
+  texinfo
+  tk-dev
+  tmux
+  wget
+  xdotool
+  xinput
+  xscreensaver
+  xz-utils
+  zlib1g-dev
+  zsh
 ]
 default['dotfiles']['gem_packages'] = %w[]
 

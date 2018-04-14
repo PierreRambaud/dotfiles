@@ -1,14 +1,8 @@
 # frozen_string_literal: true
 
-node.default['pyenv']['user_installs'] = [
-  {
-    'user'     => node['dotfiles']['user'],
-    'pythons'  => ['3.6.3'],
-    'global'   => '3.6.3'
-  }
-]
-
-include_recipe 'pyenv::user'
+pyenv_global '3.6.1' do
+  user node['dotfiles']['user']
+end
 
 git 'install-pyenv-virtual-env' do
   destination "#{node['dotfiles']['user_home']}/.pyenv/plugins/pyenv-virtualenv"

@@ -1,14 +1,16 @@
 # frozen_string_literal: true
 
-pyenv_global '3.6.1' do
+py_version = '3.6.1'
+
+pyenv_python py_version do
   user node['dotfiles']['user']
 end
 
-git 'install-pyenv-virtual-env' do
-  destination "#{node['dotfiles']['user_home']}/.pyenv/plugins/pyenv-virtualenv"
-  repository 'https://github.com/yyuu/pyenv-virtualenv.git'
+pyenv_global py_version do
   user node['dotfiles']['user']
-  group node['dotfiles']['user']
-  timeout 9000
-  action :sync
+end
+
+pyenv_plugin 'virtualenv' do
+  git_url 'https://github.com/yyuu/pyenv-virtualenv'
+  user node['dotfiles']['user']
 end

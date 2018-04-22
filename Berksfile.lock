@@ -6,11 +6,11 @@ DEPENDENCIES
     revision: ea07e8afda8db4c8279b6403d6d58513053478c4
   pyenv
     git: https://github.com/sds/chef-pyenv.git
-    revision: 89600c35ea1b5f3de3c9330a80dc62d4021cfd17
+    revision: 713ff11bc09542f2f34e78d6bf15219f004a5a0e
 
 GRAPH
-  apt (6.1.4)
-  build-essential (8.0.4)
+  apt (7.0.0)
+  build-essential (8.1.1)
     mingw (>= 1.1)
     seven_zip (>= 0.0.0)
   dotfiles (0.1.2)
@@ -19,20 +19,16 @@ GRAPH
     ndenv (>= 0.0.0)
     pyenv (>= 0.0.0)
     ruby_rbenv (>= 0.0.0)
-  git (8.0.1)
-    build-essential (>= 0.0.0)
-    homebrew (>= 0.0.0)
-  homebrew (4.3.0)
-  mingw (2.0.1)
+  git (9.0.0)
+    build-essential (>= 5.0.0)
+  mingw (2.0.2)
     seven_zip (>= 0.0.0)
   ndenv (0.4.0)
     apt (>= 0.0.0)
     build-essential (>= 0.0.0)
     git (>= 0.0.0)
-  ohai (5.2.1)
-  pyenv (0.2.0)
-  ruby_rbenv (2.0.6)
+  pyenv (1.0.0)
+  ruby_rbenv (2.0.7)
   seven_zip (2.0.2)
     windows (>= 1.2.2)
-  windows (3.4.4)
-    ohai (>= 4.0.0)
+  windows (4.2.1)

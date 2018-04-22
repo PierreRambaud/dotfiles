@@ -6,7 +6,6 @@ describe 'dotfiles::install_pyenv' do
   let(:chef_run) { ChefSpec::SoloRunner.new(DEBIAN_OPTS).converge(described_recipe) }
 
   it 'should install pyenv' do
-    expect(chef_run).to install_pyenv_python('3.6.1')
     expect(chef_run).to install_pyenv_plugin('virtualenv')
   end
 end

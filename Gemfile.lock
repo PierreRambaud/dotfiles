@@ -4,11 +4,11 @@ GEM
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
     ast (2.4.0)
-    backports (3.11.1)
-    berkshelf (6.3.1)
+    backports (3.11.3)
+    berkshelf (6.3.2)
       buff-config (~> 2.0)
       buff-extensions (~> 2.0)
-      chef (>= 12.7.2)
+      chef (>= 12.7.2, < 14.0)
       cleanroom (~> 1.0)
       concurrent-ruby (~> 1.0)
       faraday (~> 0.9)
@@ -35,10 +35,10 @@ GEM
     celluloid-io (0.16.2)
       celluloid (>= 0.16.0)
       nio4r (>= 1.1.0)
-    chef (13.7.16)
+    chef (13.8.5)
       addressable
       bundler (>= 1.10)
-      chef-config (= 13.7.16)
+      chef-config (= 13.8.5)
       chef-zero (>= 13.0)
       diff-lcs (~> 1.2, >= 1.2.4)
       erubis (~> 2.7)
@@ -65,7 +65,7 @@ GEM
       specinfra (~> 2.10)
       syslog-logger (~> 1.6)
       uuidtools (~> 2.1.5)
-    chef-config (13.7.16)
+    chef-config (13.8.5)
       addressable
       fuzzyurl
       mixlib-config (~> 2.0)
@@ -77,9 +77,9 @@ GEM
       mixlib-log (~> 1.3)
       rack (~> 2.0)
       uuidtools (~> 2.1)
-    chefspec (7.1.1)
+    chefspec (7.2.0)
       chef (>= 12.14.89)
-      fauxhai (>= 4, < 6)
+      fauxhai (>= 4)
       rspec (~> 3.0)
     cleanroom (1.0.0)
     concurrent-ruby (1.0.5)
@@ -90,14 +90,14 @@ GEM
     cucumber-tag_expressions (1.1.1)
     diff-lcs (1.3)
     erubis (2.7.0)
-    faraday (0.14.0)
+    faraday (0.15.0)
       multipart-post (>= 1.2, < 3)
-    fauxhai (5.6.0)
+    fauxhai (6.1.0)
       net-ssh
-    ffi (1.9.21)
+    ffi (1.9.23)
     ffi-yajl (2.3.1)
       libyajl2 (~> 1.2)
-    foodcritic (12.3.0)
+    foodcritic (13.1.1)
       cucumber-core (>= 1.3)
       erubis
       ffi-yajl (~> 2.0)
@@ -119,7 +119,7 @@ GEM
     ipaddress (0.8.3)
     iso8601 (0.9.1)
     json (2.1.0)
-    kitchen-vagrant (1.3.0)
+    kitchen-vagrant (1.3.1)
       test-kitchen (~> 1.4)
     libyajl2 (1.2.0)
     little-plugger (1.1.4)
@@ -132,7 +132,8 @@ GEM
       mixlib-log
     mixlib-authentication (1.4.2)
     mixlib-cli (1.7.0)
-    mixlib-config (2.2.5)
+    mixlib-config (2.2.6)
+      tomlrb
     mixlib-install (3.9.3)
       mixlib-shellout
       mixlib-versioning
@@ -140,7 +141,7 @@ GEM
     mixlib-log (1.7.1)
     mixlib-shellout (2.3.2)
     mixlib-versioning (1.2.2)
-    molinillo (0.6.4)
+    molinillo (0.6.5)
     multi_json (1.13.1)
     multipart-post (2.0.0)
     net-scp (1.2.1)
@@ -154,13 +155,13 @@ GEM
       net-ssh (>= 2.6.5)
       net-ssh-gateway (>= 1.2.0)
     net-telnet (0.1.1)
-    nio4r (2.2.0)
+    nio4r (2.3.0)
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
     nori (2.6.0)
     octokit (4.8.0)
       sawyer (~> 0.8.0, >= 0.5.3)
-    ohai (13.7.1)
+    ohai (13.9.0)
       chef-config (>= 12.5.0.alpha.1, < 14)
       ffi (~> 1.9)
       ffi-yajl (~> 2.2)
@@ -173,8 +174,8 @@ GEM
       systemu (~> 2.6.4)
       wmi-lite (~> 1.0)
     parallel (1.12.1)
-    parser (2.4.0.2)
-      ast (~> 2.3)
+    parser (2.5.1.0)
+      ast (~> 2.4.0)
     plist (3.4.0)
     polyglot (0.3.5)
     powerpack (0.1.1)
@@ -182,7 +183,7 @@ GEM
     public_suffix (3.0.2)
     rack (2.0.4)
     rainbow (3.0.0)
-    rake (12.3.0)
+    rake (12.3.1)
     retryable (2.0.4)
     ridley (5.1.1)
       addressable
@@ -221,9 +222,9 @@ GEM
     rspec_junit_formatter (0.2.3)
       builder (< 4)
       rspec-core (>= 2, < 4, != 2.12.0)
-    rubocop (0.52.1)
+    rubocop (0.55.0)
       parallel (~> 1.10)
-      parser (>= 2.4.0.2, < 3.0)
+      parser (>= 2.5)
       powerpack (~> 0.1)
       rainbow (>= 2.2.2, < 4.0)
       ruby-progressbar (~> 1.7)
@@ -245,14 +246,14 @@ GEM
     solve (4.0.0)
       molinillo (~> 0.6)
       semverse (>= 1.1, < 3.0)
-    specinfra (2.73.2)
+    specinfra (2.73.3)
       net-scp
       net-ssh (>= 2.7, < 5.0)
       net-telnet
       sfl
     syslog-logger (1.6.8)
     systemu (2.6.5)
-    test-kitchen (1.20.0)
+    test-kitchen (1.21.1)
       mixlib-install (~> 3.6)
       mixlib-shellout (>= 1.2, < 3.0)
       net-scp (~> 1.1)
@@ -261,14 +262,14 @@ GEM
       thor (~> 0.19, < 0.19.2)
       winrm (~> 2.0)
       winrm-elevated (~> 1.0)
-      winrm-fs (~> 1.1.0)
+      winrm-fs (~> 1.1)
     thor (0.19.1)
     timers (4.0.4)
       hitimes
     tomlrb (1.2.6)
-    treetop (1.6.9)
+    treetop (1.6.10)
       polyglot (~> 0.3)
-    unicode-display_width (1.3.0)
+    unicode-display_width (1.3.2)
     uuidtools (2.1.5)
     varia_model (0.6.0)
       buff-extensions (~> 2.0)
@@ -285,7 +286,7 @@ GEM
     winrm-elevated (1.1.0)
       winrm (~> 2.0)
       winrm-fs (~> 1.0)
-    winrm-fs (1.1.1)
+    winrm-fs (1.2.0)
       erubis (~> 2.7)
       logging (>= 1.6.1, < 3.0)
       rubyzip (~> 1.1)
@@ -296,16 +297,16 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  berkshelf
+  berkshelf (~> 6)
   chef (~> 13)
-  chefspec
-  foodcritic
-  kitchen-vagrant
-  rack
-  rake
-  rubocop
-  serverspec
-  test-kitchen
+  chefspec (~> 7)
+  foodcritic (~> 13)
+  kitchen-vagrant (~> 1)
+  rack (~> 2)
+  rake (~> 12)
+  rubocop (~> 0.55)
+  serverspec (~> 2)
+  test-kitchen (~> 1)
 
 BUNDLED WITH
    1.16.1

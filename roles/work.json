@@ -5,9 +5,9 @@
     "description": "Work configuration",
     "default_attributes": {
         "dotfiles": {
-            "user": "pierre",
-            "user_home": "/home/pierre",
-            "theme": "GotWhiteBlack"
+            "user": "prambaud",
+            "user_home": "/home/prambaud",
+            "theme": "GotRedBlack"
         }
     },
     "run_list": [

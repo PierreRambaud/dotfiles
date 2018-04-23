@@ -1,6 +1,7 @@
 .project
 .python-version
 .node-version
+.ac-php-conf.json
 *.pyc
 env
 *~

@@ -6,6 +6,8 @@
 [alias]
     unadd = reset HEAD
     stash-unapply = !git stash show -p | git apply -R
+    pr = "!f() { git fetch -fu ${2:-origin} refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
+    pr-clean = "!git checkout develop ; git for-each-ref refs/heads/pr/* --format=\"%(refname)\" | while read ref ; do branch=${ref#refs/heads/} ; git branch -D $branch ; done"
 [gitreview]
     username = GoT
 [core]

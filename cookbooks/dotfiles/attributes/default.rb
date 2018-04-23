@@ -10,7 +10,7 @@ default['dotfiles']['packages'] = %w[
   build-essential
   conky-all
   curl
-  emacs25
+  emacs24
   fluxbox
   arandr
   htop

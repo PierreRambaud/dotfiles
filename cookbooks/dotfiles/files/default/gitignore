@@ -1,5 +1,6 @@
 .project
 .python-version
+.node-version
 *.pyc
 env
 *~

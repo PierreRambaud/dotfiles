@@ -73,15 +73,14 @@ describe 'dotfiles::config' do
   let(:chef_run) { ChefSpec::SoloRunner.new(DEBIAN_OPTS).converge(described_recipe) }
 
   it 'configure conkyrc' do
-    expect(chef_run).to create_remote_directory('conkyrc')
-      .with(source: 'conkyrc',
-            path: '/home/got/.conkyrc',
-            owner: 'got',
-            group: 'got')
-
     expect(chef_run).to create_template('conkyrc/got')
       .with(source: 'conkyrc/got.erb',
             path: '/home/got/.conkyrc/got',
+            owner: 'got',
+            group: 'got')
+    expect(chef_run).to create_template('conkyrc/rings-v1.2.1.lua_dark')
+      .with(source: 'conkyrc/rings-v1.2.1.lua_dark.erb',
+            path: '/home/got/.conkyrc/rings-v1.2.1.lua_dark',
             owner: 'got',
             group: 'got')
   end

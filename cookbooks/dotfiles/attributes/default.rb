@@ -37,7 +37,6 @@ default['dotfiles']['packages'] = %w[
   php-gd
   php-intl
   php-mysql
-  php-pdo
   php-pear
   php-pgsql
   php-xdebug
@@ -59,6 +58,8 @@ default['dotfiles']['packages'] = %w[
   zsh
 ]
 default['dotfiles']['gem_packages'] = %w[]
+
+default['dotfiles']['with_battery'] = false
 
 default['dotfiles']['theme'] = 'GotRedBlack'
 default['dotfiles']['theme_color'] = 'D00402' if node['dotfiles']['theme'] == 'GotRedBlack'

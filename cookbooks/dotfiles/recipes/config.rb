@@ -18,7 +18,7 @@ directory 'terminator' do
   action :create
 end
 
-%w[conkyrc fluxbox].each do |item|
+%w[fluxbox].each do |item|
   remote_directory item do
     path "#{node['dotfiles']['user_home']}/.#{item}"
     source item
@@ -43,7 +43,7 @@ end
   end
 end
 
-%w[conkyrc/got config/terminator/config fluxbox/init].each do |item|
+%w[conkyrc/got conkyrc/rings-v1.2.1.lua_dark config/terminator/config fluxbox/init].each do |item|
   template item do
     source "#{item}.erb"
     path "#{node['dotfiles']['user_home']}/.#{item}"

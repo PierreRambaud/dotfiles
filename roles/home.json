@@ -1,16 +1,16 @@
 {
-    "name": "home",
-    "json_class": "Chef::Role",
-    "chef_type": "role",
-    "description": "Home laptop configuration",
-    "default_attributes": {
-        "dotfiles": {
-            "user": "got",
-            "user_home": "/home/got",
-            "theme": "GotBlueBlack"
-        }
-    },
-    "run_list": [
-        "recipe[dotfiles]"
-    ]
+  "name": "home",
+  "json_class": "Chef::Role",
+  "chef_type": "role",
+  "description": "Home laptop configuration",
+  "default_attributes": {
+    "dotfiles": {
+      "user": "got",
+      "user_home": "/home/got",
+      "theme": "GotBlueBlack"
+    }
+  },
+  "run_list": [
+    "recipe[dotfiles]"
+  ]
 }

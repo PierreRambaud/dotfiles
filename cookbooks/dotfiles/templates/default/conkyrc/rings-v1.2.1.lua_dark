@@ -316,7 +316,22 @@ settings_table = {
         thickness=4,
         start_angle=0,
         end_angle=240
+    }<% if @node['dotfiles']['with_battery'] -%>,
+    {
+        name='battery_percent',
+        arg='BAT1',
+        max=100,
+        bg_colour=0x2a2a2a,
+        bg_alpha=0.6,
+        fg_colour=0xffffff,
+        fg_alpha=0.8,
+        x=274, y=464,
+        radius=18,
+        thickness=10,
+        start_angle=180,
+        end_angle=420
     }
+<% end -%>
 }
 
 require 'cairo'

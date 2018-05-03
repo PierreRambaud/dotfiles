@@ -15,9 +15,9 @@ Changelog:
 + v1.1 -- Added options for the starting angle of the rings, and added the "max" variable, to allow for variables that output a numerical value rather than a percentage (29.09.2009)
 + v1.0 -- Original release (28.09.2009)
 
-        arg=conky_parse("${if_up wlan0}wlan0${else}eth0${endif}"),
+        arg=conky_parse("<%= @node['network']['default_interface'] %>"),
         fg_colour=0xf0651f,
-        fg_colour=conky_parse("${if_up wlan0}wlan0${else}eth0${endif}"),
+        fg_colour=conky_parse("<%= @node['network']['default_interface'] %>"),
         conky_parse("${cpu}")
         name=conky_parse("${acpitemp}"),
 ]]
@@ -249,7 +249,7 @@ settings_table = {
     },
     {
         name='downspeedf',
-        arg=conky_parse("${if_up wlan0}wlan0${else}eth0${endif}"),
+        arg=conky_parse("<%= @node['network']['default_interface'] %>"),
         max=1000,
         bg_colour=0x2a2a2a,
         bg_alpha=0.8,
@@ -263,7 +263,7 @@ settings_table = {
     },
     {
         name='upspeedf',
-        arg=conky_parse("${if_up wlan0}wlan0${else}eth0${endif}"),
+        arg=conky_parse("<%= @node['network']['default_interface'] %>"),
         max=100,
         bg_colour=0x2a2a2a,
         bg_alpha=0.6,

@@ -30,7 +30,7 @@ conky.config = {
    minimum_height = 600,
    maximum_width = 520,
 
-   alignment = 'top_left',
+   alignment = 'top_<% if @node['dotfiles']['with_battery'] -%>right<% else %>left<% end %>',
    gap_x = 0,
    gap_y = 0,
 

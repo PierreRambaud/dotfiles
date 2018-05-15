@@ -29,6 +29,6 @@ GRAPH
     git (>= 0.0.0)
   pyenv (1.0.0)
   ruby_rbenv (2.0.7)
-  seven_zip (2.0.2)
-    windows (>= 1.2.2)
+  seven_zip (3.0.0)
+    windows (>= 0.0.0)
   windows (4.2.2)

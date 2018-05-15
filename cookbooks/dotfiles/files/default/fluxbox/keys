@@ -149,3 +149,6 @@ Control Mod1 k :Exec xscreensaver-command -lock && systemctl suspend
 
 # take screenshot
 None 107 :Exec import -frame -window $(xprop _NET_ACTIVE_WINDOW -root | awk '{print $5}') ~/screenshots/active_window_screenshot$(date +%F,%T).png
+
+# open nautilus
+Mod4 e :Exec nautilus

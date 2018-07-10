@@ -11,5 +11,5 @@
 [gitreview]
     username = GoT
 [core]
-    editor = emacs
+    editor = emacs -nw
     excludesfile = ~/.gitignore

@@ -7,12 +7,13 @@ default['dotfiles']['user'] = 'got'
 default['dotfiles']['user_home'] = "/home/#{node['dotfiles']['user']}"
 default['dotfiles']['packages'] = %w[
   apache2
+  arandr
   build-essential
   conky-all
   curl
-  emacs24
+  emacs
+  flameshot
   fluxbox
-  arandr
   htop
   libbz2-dev
   libgif-dev

@@ -16,7 +16,7 @@ ck-launch-session &
 dbus-launch &
 nm-applet &
 conky -c ~/.conkyrc/got &
-(pulseaudio -D && /usr/local/bin/volay) &
+/usr/local/bin/volay &
 xinput --set-prop "10" "Device Accel Constant Deceleration" 5 &
 
 # And last but not least we start fluxbox.

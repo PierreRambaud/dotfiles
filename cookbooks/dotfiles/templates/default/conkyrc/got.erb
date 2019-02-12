@@ -82,7 +82,7 @@ ${goto 350}${font Pf Tempesta Five:bold:size=6}${color1}${top_mem name 3}${align
 ${font Pf Tempesta Five:bold:size=6}${voffset 6}${goto 350}${color1}SWAP${alignr 30}${color1}${swap} / ${color1}${swapmax}
 ${font Pf Tempesta Five:bold:size=6}${voffset 4}${goto 350}${color1}RAM ${alignr 30}${color1}${mem} / ${color1}${memmax}
 
-${font Pf Tempesta Five:bold:size=6}${goto 80}${voffset -50}Root${color1}${alignr 310}${fs_used /} / ${fs_size /}
+${font Pf Tempesta Five:bold:size=6}${goto 80}${voffset -70}Root${color1}${alignr 310}${fs_used /} / ${fs_size /}
 ${font Pf Tempesta Five:bold:size=6}${goto 80}${voffset 4}Home${alignr 310}${color1}${fs_used /home} / ${fs_size /home}
 ${font Pf Tempesta Five:bold:size=6}${goto 80}${voffset 4}Usr${alignr 310}${color1}${fs_used /usr} / ${fs_size /usr}
 ${font Arial:size=15}${color0}${goto 60}${voffset 5}HARD DRIVE
@@ -93,7 +93,7 @@ ${font Pf Tempesta Five:bold:size=6}${goto 300}${color1}Down${goto 350}${color1}
 ${font Pf Tempesta Five:bold:size=7}${goto 300}${voffset 2}Local IP${goto 370}${addr <%= @node['network']['default_interface'] %>}
 ${font Pf Tempesta Five:bold:size=7}${goto 300}${voffset -1}Public IP${goto 370}${execi 3600 wget -q -O - checkip.dyndns.org | sed -e 's/[^[:digit:]\|.]//g'}
 
-${font Arial:size=22}${goto 100}${color1}${voffset -30}${time %H}:${time %M}:${time %S}
+${font Arial:size=22}${goto 100}${color1}${voffset -50}${time %H}:${time %M}:${time %S}
 ${font Arial:size=15}${goto 70}${voffset -10}${color0}${time %a} ${color0}${time %x}
 
 <% if @node['dotfiles']['with_battery'] -%>

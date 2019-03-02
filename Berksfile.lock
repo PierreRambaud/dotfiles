@@ -31,4 +31,4 @@ GRAPH
   ruby_rbenv (2.1.2)
   seven_zip (3.1.0)
     windows (>= 0.0.0)
-  windows (5.2.2)
+  windows (5.2.4)

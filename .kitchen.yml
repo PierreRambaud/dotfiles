@@ -4,10 +4,9 @@ driver_config:
   require_chef_omnibus: true
 
 platforms:
-  - name: debian-8.6
+  - name: debian-10
     driver:
-      image: debian:8
-      pid_one_command: /bin/systemd
+      box: generic/debian10
 
 suites:
   - name: 'default'

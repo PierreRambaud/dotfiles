@@ -6,7 +6,7 @@ DEPENDENCIES
     revision: ea07e8afda8db4c8279b6403d6d58513053478c4
   pyenv
     git: https://github.com/sds/chef-pyenv.git
-    revision: c3abd2d11f2f487adce4a0137ed6f9c62b7e731f
+    revision: 9edc59bea29568c035402d0d8fc9336939ed14ee
 
 GRAPH
   apt (7.1.1)
@@ -27,8 +27,8 @@ GRAPH
     apt (>= 0.0.0)
     build-essential (>= 0.0.0)
     git (>= 0.0.0)
-  pyenv (2.1.0)
+  pyenv (3.0.0)
   ruby_rbenv (2.1.2)
   seven_zip (3.1.0)
     windows (>= 0.0.0)
-  windows (5.2.4)
+  windows (6.0.0)

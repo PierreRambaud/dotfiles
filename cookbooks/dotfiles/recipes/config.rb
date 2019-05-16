@@ -43,6 +43,14 @@ end
   end
 end
 
+directory 'conkyrc' do
+  path "#{node['dotfiles']['user_home']}/.conkyrc"
+  owner node['dotfiles']['user']
+  group node['dotfiles']['user']
+  recursive true
+  action :create
+end
+
 %w[conkyrc/got conkyrc/rings-v1.2.1.lua_dark config/terminator/config fluxbox/init].each do |item|
   template item do
     source "#{item}.erb"

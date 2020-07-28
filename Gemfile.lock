@@ -124,7 +124,7 @@ GEM
     iniparse (1.4.4)
     ipaddress (0.8.3)
     jaro_winkler (1.5.2)
-    json (2.2.0)
+    json (2.3.1)
     kitchen-vagrant (1.5.2)
       test-kitchen (>= 1.4, < 3)
     libyajl2 (1.2.0)

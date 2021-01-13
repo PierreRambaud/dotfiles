@@ -22,7 +22,7 @@ fi
 
 pushd $DOTFILES_DIRECTORY
 echo 'Bundle install...'
-$BIN_DIRECTORY/gem install bundler --no-ri --no-rdoc
+$BIN_DIRECTORY/gem install bundler
 $BIN_DIRECTORY/bundle install --without integration
 
 if [[ ! -d "$DOTFILES_DIRECTORY/berks-cookbooks" ]]; then

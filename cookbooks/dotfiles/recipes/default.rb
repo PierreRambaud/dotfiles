@@ -3,6 +3,7 @@
 include_recipe 'apt'
 
 include_recipe 'dotfiles::install'
+include_recipe 'dotfiles::repositories'
 include_recipe 'dotfiles::config'
 include_recipe 'dotfiles::service'
 

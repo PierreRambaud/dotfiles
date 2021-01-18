@@ -11,3 +11,4 @@ nodes/
 vms/
 .chef/local-mode-cache/
 .ruby-version
+.chef/chef_guid

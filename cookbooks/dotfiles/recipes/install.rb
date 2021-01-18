@@ -20,6 +20,10 @@ user node['dotfiles']['user'] do
   manage_home true
 end
 
+sudo node['dotfiles']['user'] do
+  user node['dotfiles']['user']
+end
+
 include_recipe 'dotfiles::install_rbenv'
 include_recipe 'dotfiles::install_ndenv'
 include_recipe 'dotfiles::install_pyenv'
@@ -27,11 +31,10 @@ include_recipe 'dotfiles::install_pyenv'
 git 'install-emacs-configuration' do
   destination "#{node['dotfiles']['user_home']}/.emacs.d"
   repository 'https://github.com/PierreRambaud/emacs.d.git'
-  enable_submodules true
   user node['dotfiles']['user']
   group node['dotfiles']['user']
   timeout 9000
-  action :sync
+  action :checkout
 end
 
 cask_installer = "#{Chef::Config[:file_cache_path]}/cask-install.py"
@@ -43,6 +46,9 @@ end
 execute 'install-cask' do
   command "python #{cask_installer}"
   environment 'HOME' => node['dotfiles']['user_home'], 'USER' => node['dotfiles']['user']
+  only_if do
+    not ::File.exist?("#{node['dotfiles']['user_home']}/.cask")
+  end
   ignore_failure true
 end
 

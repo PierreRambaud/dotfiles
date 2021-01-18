@@ -8,10 +8,10 @@ default['dotfiles']['user_home'] = "/home/#{node['dotfiles']['user']}"
 default['dotfiles']['packages'] = %w[
   apache2
   arandr
+  bash-completion
   build-essential
   conky-all
   curl
-  emacs
   flameshot
   fluxbox
   htop

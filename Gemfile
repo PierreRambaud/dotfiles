@@ -17,3 +17,5 @@ group :development do
   gem 'serverspec', '~>2'
   gem 'test-kitchen', '~>1'
 end
+
+gem "chef-bin", "~> 15.0"

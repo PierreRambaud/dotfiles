@@ -66,6 +66,8 @@ GEM
       train-core (~> 2.0, >= 2.0.12)
       tty-screen (~> 0.6)
       uuidtools (~> 2.1.5)
+    chef-bin (15.0.298)
+      chef (= 15.0.298)
     chef-config (15.0.298)
       addressable
       fuzzyurl
@@ -343,6 +345,7 @@ PLATFORMS
 DEPENDENCIES
   berkshelf (~> 6)
   chef (~> 15)
+  chef-bin (~> 15.0)
   chefspec (~> 7)
   foodcritic (~> 13)
   gherkin (~> 5.1.0)
@@ -355,4 +358,4 @@ DEPENDENCIES
   test-kitchen (~> 1)
 
 BUNDLED WITH
-   2.2.3
+   2.2.5

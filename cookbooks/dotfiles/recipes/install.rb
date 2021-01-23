@@ -47,7 +47,7 @@ execute 'install-cask' do
   command "python #{cask_installer}"
   environment 'HOME' => node['dotfiles']['user_home'], 'USER' => node['dotfiles']['user']
   only_if do
-    not ::File.exist?("#{node['dotfiles']['user_home']}/.cask")
+    !::File.exist?("#{node['dotfiles']['user_home']}/.cask")
   end
   ignore_failure true
 end

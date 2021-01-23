@@ -22,7 +22,7 @@ desc 'Tests suites runner'
 namespace :test do
   desc 'Foodcritic'
   task :foodcritic do
-    run_command('foodcritic -f any .')
+    run_command('foodcritic -f any cookbook/dotfiles/')
   end
 
   desc 'Rubocop'

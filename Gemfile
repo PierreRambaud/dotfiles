@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 
 gem 'berkshelf', '~>6'
 gem 'chef', '~>15'
+gem 'chef-bin', '~> 15.0'
 gem 'rack', '~>2'
 gem 'rake', '~>12'
 
@@ -17,5 +18,3 @@ group :development do
   gem 'serverspec', '~>2'
   gem 'test-kitchen', '~>1'
 end
-
-gem "chef-bin", "~> 15.0"

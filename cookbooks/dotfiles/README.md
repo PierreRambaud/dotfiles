@@ -74,8 +74,6 @@ Just include `dotfiles` in your node's `run_list`:
 
 `bundle exec rubocop` to execute rubocop
 
-`bundle exec foodcritic ./` to execute foodcritic
-
 `bundle exec kitchen test` to execute kitchen
 
 

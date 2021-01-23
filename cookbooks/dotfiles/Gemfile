@@ -10,7 +10,6 @@ gem 'rake', '~>12'
 
 group :development do
   gem 'chefspec', '~>7'
-  gem 'foodcritic', '~>13'
   gem 'gherkin', '~>5.1.0'
   gem 'kitchen-vagrant', '~>1'
   gem 'rubocop', '~>0.68'

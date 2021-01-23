@@ -28,8 +28,6 @@ $ bundle exec rake converge:home
 
 `bundle exec rubocop` to execute rubocop
 
-`bundle exec foodcritic ./` to execute foodcritic
-
 `bundle exec kitchen test` to execute kitchen
 
 ## License and Authors

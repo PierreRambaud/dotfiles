@@ -16,16 +16,11 @@ namespace :test do
   desc 'Tests suites runner'
 
   task :checkstyle do
-    Rake::Task['test:foodcritic'].invoke
     Rake::Task['test:rubocop'].invoke
   end
 
   task :specs do
     run_command 'rspec spec'
-  end
-
-  task :foodcritic do
-    run_command 'foodcritic -f any .'
   end
 
   task :rubocop do

@@ -20,11 +20,6 @@ end
 
 desc 'Tests suites runner'
 namespace :test do
-  desc 'Foodcritic'
-  task :foodcritic do
-    run_command('foodcritic -f any cookbook/dotfiles/')
-  end
-
   desc 'Rubocop'
   task :rubocop do
     run_command(:rubocop)
@@ -47,4 +42,4 @@ namespace :converge do
   end
 end
 
-task default: ['test:foodcritic', 'test:rubocop']
+task default: ['test:rubocop']

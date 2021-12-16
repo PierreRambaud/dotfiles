@@ -4,9 +4,9 @@ driver_config:
   require_chef_omnibus: true
 
 platforms:
-  - name: debian-10
+  - name: debian-11
     driver:
-      box: generic/debian10
+      box: generic/debian11
 
 suites:
   - name: 'default'

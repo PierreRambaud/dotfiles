@@ -13,7 +13,7 @@ context '#config git and bash' do
 end
 
 context '#config directories' do
-  %w[config/terminator conkyrc fluxbox emacs.d emacs.d/.cask emacs.d/prelude].each do |path|
+  %w[config/terminator conkyrc fluxbox emacs.d emacs.d/.cask].each do |path|
     describe file("/home/got/.#{path}") do
       it { should be_directory }
       it { should be_grouped_into 'got' }
@@ -52,7 +52,7 @@ context '#tools' do
     it { should be_owned_by 'got' }
   end
 
-  %w[emacs rbenv conky fluxbox pyenv volay ndenv].each do |item|
+  %w[emacs rbenv conky fluxbox pyenv nodenv].each do |item|
     describe command("type #{item}") do
       its(:exit_status) { should eq 0 }
     end

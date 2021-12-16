@@ -24,8 +24,9 @@ sudo node['dotfiles']['user'] do
   user node['dotfiles']['user']
 end
 
+include_recipe 'dotfiles::repositories'
 include_recipe 'dotfiles::install_rbenv'
-include_recipe 'dotfiles::install_ndenv'
+include_recipe 'dotfiles::install_nodenv'
 include_recipe 'dotfiles::install_pyenv'
 
 git 'install-emacs-configuration' do
@@ -37,19 +38,13 @@ git 'install-emacs-configuration' do
   action :checkout
 end
 
-cask_installer = "#{Chef::Config[:file_cache_path]}/cask-install.py"
-remote_file 'download-cask-installer' do
-  path cask_installer
-  source 'https://raw.github.com/cask/cask/master/go'
-end
-
-execute 'install-cask' do
-  command "python #{cask_installer}"
-  environment 'HOME' => node['dotfiles']['user_home'], 'USER' => node['dotfiles']['user']
-  only_if do
-    !::File.exist?("#{node['dotfiles']['user_home']}/.cask")
-  end
-  ignore_failure true
+git 'install-cask-repository' do
+  destination "#{node['dotfiles']['user_home']}/.cask"
+  repository 'https://github.com/cask/cask'
+  user node['dotfiles']['user']
+  group node['dotfiles']['user']
+  timeout 9000
+  action :checkout
 end
 
 execute 'install-emacs-dependencies' do

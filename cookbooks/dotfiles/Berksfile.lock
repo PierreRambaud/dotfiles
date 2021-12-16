@@ -2,34 +2,21 @@ DEPENDENCIES
   dotfiles
     path: .
     metadata: true
-  ndenv
-    git: https://github.com/Numergy/ndenv-cookbook.git
-    revision: ea07e8afda8db4c8279b6403d6d58513053478c4
-  pyenv
-    git: https://github.com/sds/chef-pyenv.git
-    revision: bc94f229a98b53c0d504e3a2e21d2747870eb94a
 
 GRAPH
-  apt (7.0.0)
-  build-essential (8.1.1)
-    mingw (>= 1.1)
-    seven_zip (>= 0.0.0)
+  apt (7.4.0)
   dotfiles (0.1.2)
     apt (>= 0.0.0)
-    build-essential (>= 0.0.0)
-    ndenv (>= 0.0.0)
+    nodenv (>= 0.0.0)
     pyenv (>= 0.0.0)
     ruby_rbenv (>= 0.0.0)
-  git (9.0.0)
-    build-essential (>= 5.0.0)
-  mingw (2.0.2)
-    seven_zip (>= 0.0.0)
-  ndenv (0.4.0)
-    apt (>= 0.0.0)
-    build-essential (>= 0.0.0)
-    git (>= 0.0.0)
-  pyenv (1.0.0)
-  ruby_rbenv (2.0.7)
-  seven_zip (2.0.2)
-    windows (>= 1.2.2)
-  windows (4.1.4)
+    sudo (>= 0.0.0)
+  git (10.0.0)
+  node_build (1.0.2)
+    git (~> 10.0.0)
+  nodenv (1.0.3)
+    git (~> 10.0.0)
+    node_build (~> 1.0.2)
+  pyenv (3.5.1)
+  ruby_rbenv (4.0.1)
+  sudo (5.4.7)

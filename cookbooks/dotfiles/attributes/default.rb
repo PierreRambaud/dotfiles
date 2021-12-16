@@ -12,6 +12,7 @@ default['dotfiles']['packages'] = %w[
   build-essential
   conky-all
   curl
+  emacs
   flameshot
   fluxbox
   htop
@@ -70,3 +71,6 @@ default['dotfiles']['theme_color'] = 'FFFFFF' if node['dotfiles']['theme'] == 'G
 default['dotfiles']['theme_fg_color'] = 'FFFFFF' if node['dotfiles']['theme'] == 'GotRedBlack'
 default['dotfiles']['theme_fg_color'] = 'FFFFFF' if node['dotfiles']['theme'] == 'GotBlueBlack'
 default['dotfiles']['theme_fg_color'] = '000000' if node['dotfiles']['theme'] == 'GotWhiteBlack'
+
+# Override prerequisites because of python-openssl which is no longer available on debian 11
+default['pyenv']['prerequisites'] = %w(make libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev git)

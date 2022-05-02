@@ -5,7 +5,7 @@
   "description": "Work configuration",
   "default_attributes": {
     "dotfiles": {
-      "user": "prambaud",
+      "user": "pierre",
       "user_home": "/home/prambaud",
       "theme": "GotBlueBlack",
       "with_battery": true

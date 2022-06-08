@@ -3,7 +3,7 @@ DEPENDENCIES
     path: cookbooks/dotfiles
 
 GRAPH
-  apt (7.4.0)
+  apt (7.4.2)
   dotfiles (0.1.2)
     apt (>= 0.0.0)
     nodenv (>= 0.0.0)
@@ -11,11 +11,11 @@ GRAPH
     ruby_rbenv (>= 0.0.0)
     sudo (>= 0.0.0)
   git (10.0.0)
-  node_build (1.0.2)
+  node_build (1.0.3)
     git (~> 10.0.0)
-  nodenv (1.0.3)
+  nodenv (1.0.4)
     git (~> 10.0.0)
     node_build (~> 1.0.2)
-  pyenv (3.5.1)
-  ruby_rbenv (4.0.1)
+  pyenv (4.0.1)
+  ruby_rbenv (5.0.1)
   sudo (5.4.7)

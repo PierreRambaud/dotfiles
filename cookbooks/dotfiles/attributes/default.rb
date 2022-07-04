@@ -12,14 +12,17 @@ default['dotfiles']['packages'] = %w[
   build-essential
   conky-all
   curl
-  emacs
   flameshot
   fluxbox
   htop
   libbz2-dev
+  libgccjit-10-dev
   libgif-dev
+  libgnutls28-dev
   libgtk2.0-dev
+  libjansson-dev
   libjpeg-dev
+  libmagick++-dev
   libncurses-dev
   libncurses5-dev
   libncursesw5-dev
@@ -28,31 +31,25 @@ default['dotfiles']['packages'] = %w[
   libsqlite3-dev
   libssl-dev
   libtiff-dev
+  libtiff5-dev
   libx11-dev
   libxpm-dev
   llvm
   localepurge
   make
-  php
-  php-bz2
-  php-curl
-  php-gd
-  php-intl
-  php-mysql
-  php-pear
-  php-pgsql
-  php-xdebug
-  php-xml
   pm-utils
   postgresql
   ruby
   ruby-dev
+  tclxml-dev
   terminator
   texinfo
   tk-dev
   tmux
   wget
   xdotool
+  xfce4
+  xfce4-whiskermenu-plugin
   xinput
   xscreensaver
   xz-utils

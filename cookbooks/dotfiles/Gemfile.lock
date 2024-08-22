@@ -232,8 +232,8 @@ GEM
     rake (13.0.6)
     regexp_parser (2.0.3)
     retryable (2.0.4)
-    rexml (3.2.8)
-      strscan (>= 3.0.9)
+    rexml (3.3.6)
+      strscan
     rspec (3.10.0)
       rspec-core (~> 3.10.0)
       rspec-expectations (~> 3.10.0)
